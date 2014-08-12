@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.tateDisplay {
+  width: 600px;
+  height: 1200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#appli_title {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  left: 150px;
+  top: 75px;
+  font-size: 50px;
+}
+
+#splash .btnArea {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 150px;
+  top: 230px;
+}
+
+.splashBtn {
+  display: block;
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  left: 50px;
+  font-size: 20px;
+}
+
+#p1_btn {
+  top: 0;
+}
+#p2_btn {
+  top: 60px;
+}
+#stats_btn {
+  top: 120px;
+}
+#usage_btn {
+  top: 180px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#u1Scr, #u2Scr, #u3Scr, #u4Scr {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#usage p {
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+#usage .btnArea {
+  width: 600px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 600px;
+}
+
+.usageBtn {
+  display: block;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+}
+
+#uprev_btn {
+  width: 50px;
+  left: 50px;
+}
+
+#utop_btn {
+  width: 200px;
+  left: 200px;
+}
+
+#unext_btn {
+  width: 50px;
+  right: 50px;
+}
+
+

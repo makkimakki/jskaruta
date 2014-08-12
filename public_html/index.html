@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/etc.js"></script>
+    <script src="js/cover.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/splash.js"></script>
+    <script src="js/usage.js"></script>
+    <link rel="stylesheet" media="screen" href="css/reset.css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/animation.css" rel="stylesheet" type="text/css">
+    <title>百人一首アプリ</title>
+  </head>
+  <body ontouchmove="scroll.prohibitScroll();" style="-webkit-touch-callout: none; -webkit-user-select: none; padding: 0; text-align: center;">
+    <div id="load" class="tateDisplay" style="display: block;">
+      <div id="loadBox">
+        <span id="loadmsg">Loading...</span>
+      </div>
+    </div>
+
+    <div id="splash" class="tateDisplay" style="display: none;">
+      <section class="splashScr">
+        <h2 id="appli_title">百人一首<br />かるた</h2>
+
+        <div class="btnArea">
+          <button type="button" class="splashBtn" id="p1_btn"   >練習する</button>
+          <button type="button" class="splashBtn" id="p2_btn"   >実戦練習</button>
+          <button type="button" class="splashBtn" id="stats_btn">成績を見る</button>
+          <button type="button" class="splashBtn" id="usage_btn">アプリの使い方</button>
+        </div>
+      </section>
+    </div>
+
+    <div id="game" class="yokoDisplay" style="display: none;">
+      <section id="game1Scr" class="commonScr">
+      </section>
+      <section id="game2Scr" class="commonScr" style="display: none;">
+      </section>
+      <section id="game3Scr" class="commonScr" style="display: none;">
+      </section>
+      <section id="game4Scr" class="commonScr" style="display: none;">
+      </section>
+    </div>
+
+    <div id="gFinish" class="yokoDisplay" style="display: none;">
+      <section id="gF1Scr" class="commonScr">
+      </section>
+      <section id="gF2Scr" class="commonScr">
+      </section>
+    </div>
+
+    <div id="stats" class="yokoDisplay" style="display: none;">
+      <section id="stats1Scr" class="commonScr">
+      </section>
+      <section id="stats2Scr" class="commonScr" style="display: none;">
+      </section>
+    </div>
+
+    <div id="usage" class="tateDisplay" style="display: none;">
+      <section id="u1Scr">
+        <p>このアプリでは、2種類のかるた練習モードと、決まり字を確認できる「決まり字一覧」が利用できます。</p>
+        <p>１．練習する<br />画面に表示される（詠まれていく）百人一首の歌を、100枚の取り札から選んでいく練習をします。</p>
+        <p>２．実戦練習<br />自陣のかるた25枚、敵陣のかるたが逆向きに25枚並んでいる中から、画面に表示される歌を選んでいく練習をします。</p>
+        <p>３．決まり字一覧<br />百人一首の決まり字一覧を見られます。</p>
+        <p>・その他<br />不具合、ご要望については、<br />makki.katsutoshi@gmail.com<br />までご連絡下さい。</p>
+      </section>
+      <section id="u2Scr" style="display: none;">
+        <p>
+          【練習する】<br />画面に表示される（詠まれていく）百人一首の歌を、100枚の取り札から選んでいく練習をします。<br />
+          取り札は、下の句が<br />
+          1. あ行で始まるもの<br />
+          2. か・さ行で始まるもの<br />
+          3. た・な・は行で始まるもの<br />
+          4. ま・や・わ行で始まるもの<br />
+          の4つの陣地に分かれて、50音順に並んでいます。
+        </p>
+        <p>
+          ・練習開始<br />
+          陣地の取り札のどれかにたっちすると歌詠みが始まります。
+        </p>
+      </section>
+      <section id="u3Scr" style="display: none;">
+        <p>
+          【実戦練習】<br />自陣のかるた25枚、敵陣のかるたが逆向きに25枚並んでいる中から、画面に表示される歌を選んでいく練習をします。
+        </p>
+        <p>
+          ・練習開始前に<br />
+        </p>
+        <p>
+          ・タイムボーナスについて<br />
+        </p>
+        <p>
+          ・お手つきについて<br />
+        </p>
+      </section>
+      <section id="u4Scr" style="display: none;">
+        <p>
+          【決まり字一覧】<br />上の句の五十音順に決まり字が表示された一覧です。
+        </p>
+      </section>
+
+      <div class="btnArea">
+        <button type="button" class="usageBtn" id="uprev_btn">←</button>
+        <button type="button" class="usageBtn" id="utop_btn">トップへ</button>
+        <button type="button" class="usageBtn" id="unext_btn">→</button>
+      </div>
+    </div>
+
+    <div id="cover" style="display: none; width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: 1; background: rgba(0, 0, 0, 1); "></div>
+
+    <script>
+/*
+    window.onerror = function (message, url, line) {
+      alert(message + '\n' +
+            url + ':' + line);
+      return true;
+    }
+*/
+    //ツールバー、アドレスバー消去用
+    setTimeout(scrollTo, 0, 0, 1);
+
+    //画面回転時に正しい位置に戻す。
+    $(window).on('orientationchange', function() {
+      window.scrollTo(0,0);
+    });
+
+    var adjust_count = 0;
+    var same_tate_count = 0;
+    var prev_tate = 0;
+    adjustLayout();
+
+    var DEBUG = false;
+    var controller = new Controller();
+    controller.initAndStart();
+    </script>
+  </body>
+</html>
