@@ -3,12 +3,9 @@
      fadein 1s linear 0s 1 forwards;
   -webkit-animation:
      fadein 1s linear 0s 1 forwards;
-  -moz-animation:
-     fadein 1s linear 0s 1 forwards;
 
   animation-play-state: running;
   -webkit-animation-play-state: running;
-  -moz-animation-play-state: running;
 }
 
 .all_fadein {
@@ -16,12 +13,9 @@
      fadeout 1s linear 0s 1 forwards;
   -webkit-animation:
      fadeout 1s linear 0s 1 forwards;
-  -moz-animation:
-     fadeout 1s linear 0s 1 forwards;
 
   animation-play-state: running;
   -webkit-animation-play-state: running;
-  -moz-animation-play-state: running;
 }
 
 .sfadein {
@@ -29,12 +23,9 @@
      fadein 0.2s linear 0s 1 forwards;
   -webkit-animation:
      fadein 0.2s linear 0s 1 forwards;
-  -moz-animation:
-     fadein 0.2s linear 0s 1 forwards;
 
   animation-play-state: running;
   -webkit-animation-play-state: running;
-  -moz-animation-play-state: running;
 }
 
 .sfadeout {
@@ -42,26 +33,15 @@
      fadeout 0.2s linear 0s 1 forwards;
   -webkit-animation:
      fadeout 0.2s linear 0s 1 forwards;
-  -moz-animation:
-     fadeout 0.2s linear 0s 1 forwards;
 
   animation-play-state: running;
   -webkit-animation-play-state: running;
-  -moz-animation-play-state: running;
 }
-
-
 
 @keyframes fadeout {
   0%   { opacity: 1; }
   100% { opacity: 0; }
 }
-
-@-moz-keyframes fadeout {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 @-webkit-keyframes fadeout {
   0%   { opacity: 1; }
   100% { opacity: 0; }
@@ -71,13 +51,47 @@
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
-
-@-moz-keyframes fadein {
+@-webkit-keyframes fadein {
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
 
-@-webkit-keyframes fadein {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+
+
+.rrotate {
+  animation:
+     rrotate 1.5s linear 0s infinite forwards;
+  -webkit-animation:
+     rrotate 1.5s linear 0s infinite forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+.lrotate {
+  animation:
+     lrotate 1.5s linear 0s infinite forwards;
+  -webkit-animation:
+     lrotate 1.5s linear 0s infinite forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+@keyframes rrotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(360deg); }
+}
+@-webkit-keyframes rrotate {
+  0%     { -webkit-transform: rotate(0deg); }
+  100%   { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes lrotate {
+  0%    { transform: rotate(0deg); }
+  100%  { transform: rotate(-360deg); }
+}
+@-webkit-keyframes lrotate {
+  0%    { -webkit-transform: rotate(0deg); }
+  100%  { -webkit-transform: rotate(-360deg); }
 }

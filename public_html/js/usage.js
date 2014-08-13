@@ -23,7 +23,6 @@ var Usage = function() {
       document.getElementById('uprev_btn').addEventListener('click', self.prevPage);
       document.getElementById('unext_btn').addEventListener('click', self.nextPage);
       document.getElementById('utop_btn').addEventListener('click', self.gotoTop);
-
     }
   };
 
@@ -73,6 +72,9 @@ var Usage = function() {
   var fadeout_spec = {
     next: function() {
       document.getElementById('usage').style['display'] = 'none';
+      self.u[self.page_no].style['display'] = 'none';
+      self.page_no = 1;
+      self.u[self.page_no].style['display'] = 'block';
       self.controller.finishPhase('splash');
     }
   };

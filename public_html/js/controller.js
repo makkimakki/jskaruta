@@ -9,12 +9,20 @@ var Controller = function() {
   this.phase_list = {
     1:  'load',
     2:  'splash',
-    3:  'usage',
+    3:  'practice1',
+    4:  'practice2',
+    5:  'result',
+    6:  'stats',
+    7:  'usage',
   };
 
   this.finished_phase_list = {
     'load': 0,
     'splash': 0,
+    'practice1': 0,
+    'practice2': 0,
+    'result': 0,
+    'stats': 0,
     'usage': 0
   };
 
@@ -60,6 +68,11 @@ var Controller = function() {
 
       case 'splash':
         self.phase_obj = new Splash();
+        self.phase_obj.init(self);
+        break;
+
+      case 'practice1':
+        self.phase_obj = new Practice1();
         self.phase_obj.init(self);
         break;
 

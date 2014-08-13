@@ -12,6 +12,9 @@ var NumberUtil = {
     var amari1 = num % i;
     var amari2 = amari1 % j;
     return (amari1 - amari2) / j;
+  },
+  getRandomInt: function(min, max) {
+    return Math.floor( Math.random() * (max - min + 1) ) + min;
   }
 };
 

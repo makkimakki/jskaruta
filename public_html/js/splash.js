@@ -11,6 +11,7 @@ var Splash = function() {
 
   this.start = function() {
     if (!self.controller.finished_phase_list['splash']) {
+      document.getElementById('p1_btn').addEventListener('click', self.toP1);
       document.getElementById('usage_btn').addEventListener('click', self.toUsage);
     }
   };

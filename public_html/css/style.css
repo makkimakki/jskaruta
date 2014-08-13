@@ -13,6 +13,22 @@
   left: 0;
 }
 
+.yokoDisplay {
+  width: 1200px;
+  height: 600px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.commonScr {
+  width: 1200px;
+  height: 600px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 #appli_title {
   width: 300px;
   height: 100px;
@@ -52,8 +68,237 @@
   top: 180px;
 }
 
+#gameTop {
+  display: block;
+  width: 1200px;
+  height: 120px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #AAAAFF;
+}
+
+#moonArea {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+	background: linear-gradient(-90deg, rgba(200, 200, 200, 1), rgba(200, 200, 200, 1) 50px, rgba(255, 255, 0, 1) 51px, rgba(255, 255, 0, 1));
+	background: -webkit-linear-gradient(180deg, rgba(200, 200, 200, 1), rgba(200, 200, 200, 1) 50px, rgba(255, 255, 0, 1) 51px, rgba(255, 255, 0, 1));
+  border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
+  -webkit-border-radius: 50px 50px 50px 50px / 50px 50px 50px 50px;
+}
+
+#leftM {
+  display: block;
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #FFFF00;
+  border-radius: 50px 0 0 50px / 50px 0 0 50px;
+}
+
+#rightM {
+  display: block;
+  width: 20px;
+  height: 100px;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  background-color: #FFFF00;
+  border-radius:  0 20px 20px 0 / 0 50px 50px 0;
+}
+
+/*
+#leftM {
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #FFAA00;
+  border-radius: 50px 0 0 50px / 50px 0 0 50px;
+	background: linear-gradient(-90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50px, rgba(200, 200, 200, 0) 51px, rgba(200, 200, 200, 0));
+	background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50px, rgba(200, 200, 200, 0) 51px, rgba(200, 200, 200, 0));
+  -webkit-border-radius: 50px 0 0 50px / 50px 0 0 50px;
+}
+
+#rightM {
+  display: block;
+  width: 70px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+	background: linear-gradient(-90deg, rgba(255, 255, 0, 1), rgba(255, 255, 0, 1) 20px, rgba(0, 0, 0, 0) 20px, rgba(0, 0, 0, 0));
+	background: -webkit-linear-gradient(180deg, rgba(255, 255, 0, 1), rgba(255, 255, 0, 1) 20px, rgba(0, 0, 0, 0) 20px, rgba(0, 0, 0, 0));
+  border-radius:  0 20px 20px 0 / 0 50px 50px 0;
+  -webkit-border-radius:  0 20px 20px 0 / 0 50px 50px 0;
+}
+*/
+
+#utaArea {
+  width: 910px;
+  height: 120px;
+  position: absolute;
+  left: 130px;
+  top: 0;
+  background-color: #DDDDDD;
+}
+
+#uta1, #uta2, #uta3, #uta4, #uta5 {
+  height: 40px;
+  text-align: left;
+  position: absolute;
+  font-size: 39px;
+  background-color: #FFCCCC;
+}
+
+#uta1 {
+  width: 240px;
+  left: 15px;
+  top: 15px;
+}
+#uta2 {
+  width: 320px;
+  left: 295px;
+  top: 15px;
+}
+#uta3 {
+  width: 240px;
+  left: 655px;
+  top: 15px;
+}
+#uta4 {
+  width: 320px;
+  left: 15px;
+  top: 65px;
+}
+#uta5 {
+  width: 320px;
+  left: 375px;
+  top: 65px;
+}
+
+#scoreArea {
+  width: 130px;
+  height: 120px;
+  position: absolute;
+  left: 1060px;
+  top: 0;
+  background-color: #ffaaaa;
+  font-size: 33px;
+}
+
+#scoreArea #rightD{
+  height: 33px;
+  width: 100px;
+  position: absolute;
+  left: 15px;
+  top: 22px;
+}
+
+#scoreArea #wrongD{
+  height: 34px;
+  width: 100px;
+  position: absolute;
+  left: 15px;
+  bottom: 22px;
+}
+
+#scoreArea span {
+  display: inline-block;
+}
+#rightT {
+  float: left;
+}
+#rightCount {
+  float: right;
+}
+#wrongT {
+  float: left;
+}
+#wrongCount {
+  float: right;
+}
 
 
+
+
+#gameRight {
+  display: block;
+  width: 120px;
+  height: 480px;
+  position: absolute;
+  left: 1080px;
+  top: 120px;
+  background-color: #CCCCFF;
+}
+
+#nexta_btn, #preva_btn {
+  display: block;
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  left: 10px;
+  background-color: #55AAFF;
+  font-size: 33px;
+}
+
+#nexta_btn {
+  top: 10px;
+}
+#preva_btn, #kara_btn {
+  top: 220px;
+}
+
+
+.karutaArea {
+  width: 1080px;
+  height: 480px;
+  position: absolute;
+  left: 0;
+  top: 120px;
+}
+
+.karuta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 140px;
+}
+
+.karuta div {
+  width: 100px;
+  height: 140px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  
+	background: url(../img/frame.png) no-repeat center center;
+  /*
+	background: linear-gradient(90deg,         rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5)), url(../img/frame.png) no-repeat center center;
+	background: -moz-linear-gradient(90deg,    rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5)), url(../img/frame.png) no-repeat center center;
+	background: -webkit-linear-gradient(90deg, rgba(255, 255, 0, 0.5), rgba(255, 255, 0, 0.5)), url(../img/frame.png) no-repeat center center;
+
+	background: linear-gradient(215deg,         rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0)), url(../img/frame.png) no-repeat top right;
+	background: -moz-linear-gradient(215deg,    rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0)), url(../img/frame.png) no-repeat top right;
+	background: -webkit-linear-gradient(215deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0)), url(../img/frame.png) no-repeat top right;
+  */
+}
+.karuta div p { 
+  display: inline-block;
+  width: 80px;
+  height: 120px;
+  font-size: 20px;
+  line-height: 25px;
+}
 
 
 

@@ -11,6 +11,7 @@
     <script src="js/controller.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/splash.js"></script>
+    <script src="js/practice1.js"></script>
     <script src="js/usage.js"></script>
     <link rel="stylesheet" media="screen" href="css/reset.css" />
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -38,20 +39,193 @@
     </div>
 
     <div id="game" class="yokoDisplay" style="display: none;">
-      <section id="game1Scr" class="commonScr">
-      </section>
-      <section id="game2Scr" class="commonScr" style="display: none;">
-      </section>
-      <section id="game3Scr" class="commonScr" style="display: none;">
-      </section>
-      <section id="game4Scr" class="commonScr" style="display: none;">
+      <section id="gameScr" class="commonScr">
+        <div id="gameTop">
+          <div id="moonArea"><div id="leftM"></div><div id="rightM"></div></div>
+
+          <div id="utaArea">
+            <div id="uta1">
+              <span id="u11">よ</span><span id="u12">を</span><span id="u13">こ</span><span id="u14">め</span><span id="u15">て</span><span id="u16"></span>
+            </div>
+            <div id="uta2">
+              <span id="u21">と</span><span id="u22">り</span><span id="u23">の</span><span id="u24">そ</span><span id="u25">ら</span><span id="u26">ね</span><span id="u27">は</span><span id="u28"></span>
+            </div>
+            <div id="uta3">
+              <span id="u31">は</span><span id="u32">か</span><span id="u33">る</span><span id="u34">と</span><span id="u35">も</span><span id="u36"></span>
+            </div>
+            <div id="uta4">
+              <span id="u41">よ</span><span id="u42">に</span><span id="u43">お</span><span id="u44">お</span><span id="u45">さ</span><span id="u46">か</span><span id="u47">の</span><span id="u48"></span>
+            </div>
+            <div id="uta5">
+              <span id="u51">せ</span><span id="u52">き</span><span id="u53">は</span><span id="u54">ゆ</span><span id="u55">る</span><span id="u56">さ</span><span id="u57">じ</span><span id="u58"></span>
+            </div>
+          </div>
+
+          <div id="scoreArea">
+            <div id="rightD">
+              <span id="rightT">正: </span>
+              <span id="rightCount">153</span>
+            </div>
+            <div id="wrongD">
+              <span id="wrongT">誤: </span>
+              <span id="wrongCount">12</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="gameRight">
+          <div id="nexta_btn"><br />次<br />の<br />陣<br />地<br /></div>
+          <div id="preva_btn"><br />前<br />の<br />陣<br />地<br /></div>
+          <div id="kara_btn" style="display: none;">空札<br />判定</div>
+        </div>
+
+        <div id="karutaArea1" class="karutaArea">
+          <div id="k100" class="karuta"><div id="k100s"></div></div>
+          <div id="k101" class="karuta"><div id="k101s"></div></div>
+          <div id="k102" class="karuta"><div id="k102s"></div></div>
+          <div id="k103" class="karuta"><div id="k103s"></div></div>
+          <div id="k104" class="karuta"><div id="k104s"></div></div>
+          <div id="k105" class="karuta"><div id="k105s"></div></div>
+          <div id="k106" class="karuta"><div id="k106s"></div></div>
+          <div id="k107" class="karuta"><div id="k107s"></div></div>
+          <div id="k108" class="karuta"><div id="k108s"></div></div>
+          <div id="k109" class="karuta"><div id="k109s"></div></div>
+
+          <div id="k110" class="karuta"><div id="k110s"></div></div>
+          <div id="k111" class="karuta"><div id="k111s"></div></div>
+          <div id="k112" class="karuta"><div id="k112s"></div></div>
+          <div id="k113" class="karuta"><div id="k113s"></div></div>
+          <div id="k114" class="karuta"><div id="k114s"></div></div>
+          <div id="k115" class="karuta"><div id="k115s"></div></div>
+          <div id="k116" class="karuta"><div id="k116s"></div></div>
+          <div id="k117" class="karuta"><div id="k117s"></div></div>
+          <div id="k118" class="karuta"><div id="k118s"></div></div>
+          <div id="k119" class="karuta"><div id="k119s"></div></div>
+
+          <div id="k120" class="karuta"><div id="k120s"></div></div>
+          <div id="k121" class="karuta"><div id="k121s"></div></div>
+          <div id="k122" class="karuta"><div id="k122s"></div></div>
+          <div id="k123" class="karuta"><div id="k123s"></div></div>
+          <div id="k124" class="karuta"><div id="k124s"></div></div>
+          <div id="k125" class="karuta"><div id="k125s"></div></div>
+          <div id="k126" class="karuta"><div id="k126s"></div></div>
+          <div id="k127" class="karuta"><div id="k127s"></div></div>
+          <div id="k128" class="karuta"><div id="k128s"></div></div>
+          <div id="k129" class="karuta"><div id="k129s"><p>の か あ<br />は り か<br />な う つ<br />し き き<br />　 も は</p></div></div>
+        </div>
+
+        <div id="karutaArea2" class="karutaArea" style="display: none;">
+          <div id="k200" class="karuta"><div id="k200s"></div></div>
+          <div id="k201" class="karuta"><div id="k201s"></div></div>
+          <div id="k202" class="karuta"><div id="k202s"></div></div>
+          <div id="k203" class="karuta"><div id="k203s"></div></div>
+          <div id="k204" class="karuta"><div id="k204s"></div></div>
+          <div id="k205" class="karuta"><div id="k205s"></div></div>
+          <div id="k206" class="karuta"><div id="k206s"></div></div>
+          <div id="k207" class="karuta"><div id="k207s"></div></div>
+          <div id="k208" class="karuta"><div id="k208s"></div></div>
+          <div id="k209" class="karuta"><div id="k209s"></div></div>
+
+          <div id="k210" class="karuta"><div id="k210s"></div></div>
+          <div id="k211" class="karuta"><div id="k211s"></div></div>
+          <div id="k212" class="karuta"><div id="k212s"></div></div>
+          <div id="k213" class="karuta"><div id="k213s"></div></div>
+          <div id="k214" class="karuta"><div id="k214s"></div></div>
+          <div id="k215" class="karuta"><div id="k215s"></div></div>
+          <div id="k216" class="karuta"><div id="k216s"></div></div>
+          <div id="k217" class="karuta"><div id="k217s"></div></div>
+          <div id="k218" class="karuta"><div id="k218s"></div></div>
+          <div id="k219" class="karuta"><div id="k219s"></div></div>
+
+          <div id="k220" class="karuta"><div id="k220s"></div></div>
+          <div id="k221" class="karuta"><div id="k221s"></div></div>
+          <div id="k222" class="karuta"><div id="k222s"></div></div>
+          <div id="k223" class="karuta"><div id="k223s"></div></div>
+          <div id="k224" class="karuta"><div id="k224s"></div></div>
+          <div id="k225" class="karuta"><div id="k225s"></div></div>
+          <div id="k226" class="karuta"><div id="k226s"></div></div>
+          <div id="k227" class="karuta"><div id="k227s"></div></div>
+          <div id="k228" class="karuta"><div id="k228s"></div></div>
+          <div id="k229" class="karuta"><div id="k229s"></div></div>
+        </div>
+
+        <div id="karutaArea3" class="karutaArea" style="display: none;">
+          <div id="k300" class="karuta"><div id="k300s"></div></div>
+          <div id="k301" class="karuta"><div id="k301s"></div></div>
+          <div id="k302" class="karuta"><div id="k302s"></div></div>
+          <div id="k303" class="karuta"><div id="k303s"></div></div>
+          <div id="k304" class="karuta"><div id="k304s"></div></div>
+          <div id="k305" class="karuta"><div id="k305s"></div></div>
+          <div id="k306" class="karuta"><div id="k306s"></div></div>
+          <div id="k307" class="karuta"><div id="k307s"></div></div>
+          <div id="k308" class="karuta"><div id="k308s"></div></div>
+          <div id="k309" class="karuta"><div id="k309s"></div></div>
+
+          <div id="k310" class="karuta"><div id="k310s"></div></div>
+          <div id="k311" class="karuta"><div id="k311s"></div></div>
+          <div id="k312" class="karuta"><div id="k312s"></div></div>
+          <div id="k313" class="karuta"><div id="k313s"></div></div>
+          <div id="k314" class="karuta"><div id="k314s"></div></div>
+          <div id="k315" class="karuta"><div id="k315s"></div></div>
+          <div id="k316" class="karuta"><div id="k316s"></div></div>
+          <div id="k317" class="karuta"><div id="k317s"></div></div>
+          <div id="k318" class="karuta"><div id="k318s"></div></div>
+          <div id="k319" class="karuta"><div id="k319s"></div></div>
+
+          <div id="k320" class="karuta"><div id="k320s"></div></div>
+          <div id="k321" class="karuta"><div id="k321s"></div></div>
+          <div id="k322" class="karuta"><div id="k322s"></div></div>
+          <div id="k323" class="karuta"><div id="k323s"></div></div>
+          <div id="k324" class="karuta"><div id="k324s"></div></div>
+          <div id="k325" class="karuta"><div id="k325s"></div></div>
+          <div id="k326" class="karuta"><div id="k326s"></div></div>
+          <div id="k327" class="karuta"><div id="k327s"></div></div>
+          <div id="k328" class="karuta"><div id="k328s"></div></div>
+          <div id="k329" class="karuta"><div id="k329s"></div></div>
+        </div>
+
+        <div id="karutaArea4" class="karutaArea" style="display: none;">
+          <div id="k400" class="karuta"><div id="k400s"></div></div>
+          <div id="k401" class="karuta"><div id="k401s"></div></div>
+          <div id="k402" class="karuta"><div id="k402s"></div></div>
+          <div id="k403" class="karuta"><div id="k403s"></div></div>
+          <div id="k404" class="karuta"><div id="k404s"></div></div>
+          <div id="k405" class="karuta"><div id="k405s"></div></div>
+          <div id="k406" class="karuta"><div id="k406s"></div></div>
+          <div id="k407" class="karuta"><div id="k407s"></div></div>
+          <div id="k408" class="karuta"><div id="k408s"></div></div>
+          <div id="k409" class="karuta"><div id="k409s"></div></div>
+
+          <div id="k410" class="karuta"><div id="k410s"></div></div>
+          <div id="k411" class="karuta"><div id="k411s"></div></div>
+          <div id="k412" class="karuta"><div id="k412s"></div></div>
+          <div id="k413" class="karuta"><div id="k413s"></div></div>
+          <div id="k414" class="karuta"><div id="k414s"></div></div>
+          <div id="k415" class="karuta"><div id="k415s"></div></div>
+          <div id="k416" class="karuta"><div id="k416s"></div></div>
+          <div id="k417" class="karuta"><div id="k417s"></div></div>
+          <div id="k418" class="karuta"><div id="k418s"></div></div>
+          <div id="k419" class="karuta"><div id="k419s"></div></div>
+
+          <div id="k420" class="karuta"><div id="k420s"></div></div>
+          <div id="k421" class="karuta"><div id="k421s"></div></div>
+          <div id="k422" class="karuta"><div id="k422s"></div></div>
+          <div id="k423" class="karuta"><div id="k423s"></div></div>
+          <div id="k424" class="karuta"><div id="k424s"></div></div>
+          <div id="k425" class="karuta"><div id="k425s"></div></div>
+          <div id="k426" class="karuta"><div id="k426s"></div></div>
+          <div id="k427" class="karuta"><div id="k427s"></div></div>
+          <div id="k428" class="karuta"><div id="k428s"></div></div>
+          <div id="k429" class="karuta"><div id="k429s"></div></div>
+        </div>
       </section>
     </div>
 
-    <div id="gFinish" class="yokoDisplay" style="display: none;">
-      <section id="gF1Scr" class="commonScr">
+    <div id="result" class="yokoDisplay" style="display: none;">
+      <section id="r1Scr" class="commonScr">
       </section>
-      <section id="gF2Scr" class="commonScr">
+      <section id="r2Scr" class="commonScr">
       </section>
     </div>
 
