@@ -156,7 +156,6 @@
   text-align: left;
   position: absolute;
   font-size: 39px;
-  background-color: #FFCCCC;
 }
 
 #uta1 {
@@ -241,21 +240,44 @@
 }
 
 #nexta_btn, #preva_btn {
-  display: block;
+}
+
+#nexta_btn {
   width: 100px;
   height: 200px;
   position: absolute;
   left: 10px;
+  top: 10px;
+  background-color: #55AAFF;
+  font-size: 33px;
+}
+#preva_btn, #kara_btn {
+  width: 100px;
+  height: 200px;
+  position: absolute;
+  left: 10px;
+  top: 220px;
   background-color: #55AAFF;
   font-size: 33px;
 }
 
-#nexta_btn {
-  top: 10px;
+#jinchiLArea {
+  width: 100px;
+  height: 10px;
+  position: absolute;
+  left: 10px;
+  top: 210px;
+  background-color: #777777;
 }
-#preva_btn, #kara_btn {
-  top: 220px;
+#jinchiLight {
+  width: 25px;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #FF6600;
 }
+
 
 
 .karutaArea {

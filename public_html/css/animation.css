@@ -38,6 +38,16 @@
   -webkit-animation-play-state: running;
 }
 
+.vsfadein {
+  animation:
+     fadein 0.1s linear 0s 1 forwards;
+  -webkit-animation:
+     fadein 0.1s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
 @keyframes fadeout {
   0%   { opacity: 1; }
   100% { opacity: 0; }
@@ -60,10 +70,9 @@
 
 .rrotate {
   animation:
-     rrotate 1.5s linear 0s infinite forwards;
+     rrotate 1.5s cubic-bezier(0.15, 0.5, 0.85, 1.0) 0s 1 forwards;
   -webkit-animation:
-     rrotate 1.5s linear 0s infinite forwards;
-
+     rrotate 1.5s cubic-bezier(0.15, 0.5, 0.85, 1.0) 0s 1 forwards;
   animation-play-state: running;
   -webkit-animation-play-state: running;
 }
@@ -78,13 +87,14 @@
   -webkit-animation-play-state: running;
 }
 
+
 @keyframes rrotate {
-  0%    { transform: rotate(0deg); }
-  100%  { transform: rotate(360deg); }
+  0%    { transform: translate(0px, 0px) rotate(0deg); }
+  100%  { transform: translate(1800px, 200px) rotate(200deg); }
 }
 @-webkit-keyframes rrotate {
-  0%     { -webkit-transform: rotate(0deg); }
-  100%   { -webkit-transform: rotate(360deg); }
+  0%    { -webkit-transform: translate(0px, 0px) rotate(0deg); }
+  100%  { -webkit-transform: translate(1800px, 200px) rotate(200deg); }
 }
 
 @keyframes lrotate {
