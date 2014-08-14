@@ -40,9 +40,9 @@
 
 .vsfadein {
   animation:
-     fadein 0.1s linear 0s 1 forwards;
+     fadein 0.2s linear 0s 1 forwards;
   -webkit-animation:
-     fadein 0.1s linear 0s 1 forwards;
+     fadein 0.2s linear 0s 1 forwards;
 
   animation-play-state: running;
   -webkit-animation-play-state: running;
@@ -104,4 +104,24 @@
 @-webkit-keyframes lrotate {
   0%    { -webkit-transform: rotate(0deg); }
   100%  { -webkit-transform: rotate(-360deg); }
+}
+
+
+.dialogdisplay {
+  animation:
+     fadein 0.08s linear 0s 1 forwards;
+  -webkit-animation:
+     fadein 0.08s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+@keyframes dialogdisplay2 {
+  0%    { transform: scale(0.6); }
+  100%  { transform: scale(1); }
+}
+@-webkit-keyframes dialogdisplay2 {
+  0%    { -webkit-transform: scale(0.6); }
+  100%  { -webkit-transform: scale(1); }
 }

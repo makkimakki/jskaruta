@@ -18,7 +18,13 @@ var NumberUtil = {
   }
 };
 
+function getTimestamp() {
+  return Math.round(new Date().getTime() / 1000);
+}
 
+function getMTimestamp() {
+  return new Date().getTime();
+}
 function getPxs() {
   var base_tate = 600;
   var base_yoko = 1200;

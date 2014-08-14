@@ -6,6 +6,7 @@
     <script src="js/jquery-2.0.3.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
     <script src="js/karuta.js"></script>
+    <script src="js/moon.js"></script>
     <script src="js/etc.js"></script>
     <script src="js/cover.js"></script>
     <script src="js/animation.js"></script>
@@ -46,19 +47,19 @@
 
           <div id="utaArea">
             <div id="uta1">
-              <span id="u11">よ</span><span id="u12">を</span><span id="u13">こ</span><span id="u14">め</span><span id="u15">て</span><span id="u16"></span>
+              <span id="u11"></span><span id="u12"></span><span id="u13"></span><span id="u14"></span><span id="u15"></span><span id="u16"></span>
             </div>
             <div id="uta2">
-              <span id="u21">と</span><span id="u22">り</span><span id="u23">の</span><span id="u24">そ</span><span id="u25">ら</span><span id="u26">ね</span><span id="u27">は</span><span id="u28"></span>
+              <span id="u21"></span><span id="u22"></span><span id="u23"></span><span id="u24"></span><span id="u25"></span><span id="u26"></span><span id="u27"></span><span id="u28"></span>
             </div>
             <div id="uta3">
-              <span id="u31">は</span><span id="u32">か</span><span id="u33">る</span><span id="u34">と</span><span id="u35">も</span><span id="u36"></span>
+              <span id="u31"></span><span id="u32"></span><span id="u33"></span><span id="u34"></span><span id="u35"></span><span id="u36"></span>
             </div>
             <div id="uta4">
-              <span id="u41">よ</span><span id="u42">に</span><span id="u43">お</span><span id="u44">お</span><span id="u45">さ</span><span id="u46">か</span><span id="u47">の</span><span id="u48"></span>
+              <span id="u41"></span><span id="u42"></span><span id="u43"></span><span id="u44"></span><span id="u45"></span><span id="u46"></span><span id="u47"></span><span id="u48"></span>
             </div>
             <div id="uta5">
-              <span id="u51">せ</span><span id="u52">き</span><span id="u53">は</span><span id="u54">ゆ</span><span id="u55">る</span><span id="u56">さ</span><span id="u57">じ</span><span id="u58"></span>
+              <span id="u51"></span><span id="u52"></span><span id="u53"></span><span id="u54"></span><span id="u55"></span><span id="u56"></span><span id="u57"></span><span id="u58"></span>
             </div>
           </div>
 
@@ -116,7 +117,7 @@
           <div id="k126" class="karuta"><div id="k126s"></div></div>
           <div id="k127" class="karuta"><div id="k127s"></div></div>
           <div id="k128" class="karuta"><div id="k128s"></div></div>
-          <div id="k129" class="karuta"><div id="k129s"><p>の か あ<br />は り か<br />な う つ<br />し き き<br />　 も は</p></div></div>
+          <div id="k129" class="karuta"><div id="k129s"></div></div>
         </div>
 
         <div id="karutaArea2" class="karutaArea" style="display: none;">
@@ -290,7 +291,17 @@
       </div>
     </div>
 
-    <div id="cover" style="display: none; width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: 1; background: rgba(0, 0, 0, 1); "></div>
+    <div id="cover" style="display: block; width: 100%; height: 100%; position: fixed; left: 0; top: 0; z-index: 101; background: rgba(0, 0, 0, 1); ">
+      <div id="dialog" style="display: none;">
+        <div id="dMsgArea">
+          <p id="dMsg">お手つき！<br />第98番 作者は従二位家隆<br />(じゅうにいいえたか)です。</p>
+        </div>
+        <div class="dBtnArea">
+          <button type="button" id="d1_btn">次へ進む</button>
+          <button type="button" id="d2_btn">正解を確認する</button>
+        </div>
+      </div>
+    </div>
 
     <script>
 /*

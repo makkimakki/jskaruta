@@ -11,13 +11,30 @@ var Practice1 = function() {
   };
 
   this.start = function() {
-    document.getElementById('k129').addEventListener('click', self.flyKaruta);
+    document.getElementById('k101').addEventListener('click', self.flyKaruta);
+    KarutaBoard.init('practice1');
+
+    Utayomi.initObjs();
+    Utayomi.eraseUtaDisplay();
+    Utayomi.startYomi(1);
+
+    MoonTimer.initObjs();
+    MoonTimer.startTimer();
+
+    document.getElementById('cover').style['z-index'] = '100';
+    document.getElementById('cover').style['display'] = 'block';
+    document.getElementById('cover').style['background'] = 'rgba(0, 0, 0, 0.6)';
+    document.getElementById('dialog').style['display'] = 'block';
+    //document.getElementById('dialog').className = 'dialogdisplay';
   };
 
   this.flyKaruta = function() {
+    this.style['z-index'] = '100';
     this.className = 'karuta rrotate';
     var id = this.id;
-    setTimeout(function() { document.getElementById(id).className = 'karuta'; }, 2000);
+    setTimeout(function() {
+      document.getElementById(id).className = 'karuta';
+    }, 2000);
   };
 
   this.toNextJinchi = function() {
