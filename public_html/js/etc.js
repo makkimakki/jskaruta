@@ -18,6 +18,20 @@ var NumberUtil = {
   }
 };
 
+var ArrayUtil = {
+  getRandomArray: function(arr) {
+    var tmp_arr = arr.slice(0);
+    var new_arr = new Array(arr.length);
+
+    for (var i = 0; i < arr.length; i++) {
+      var rnd = NumberUtil.getRandomInt(0, tmp_arr.length - 1);
+      new_arr[i] = tmp_arr[rnd];
+      tmp_arr.splice(rnd, 1);
+    }
+    return new_arr;
+  }
+};
+
 function getTimestamp() {
   return Math.round(new Date().getTime() / 1000);
 }
@@ -60,8 +74,8 @@ function adjustLayout() {
 
   //alert(String(yoko)+'x'+String(tate));
 
-  adjust_count++;
 /*
+  adjust_count++;
   if (tate >= 1200 && adjust_count < 5) {
     if (!prev_tate) prev_tate = tate;
     if (prev_tate == tate && same_tate_count < 4) {
@@ -71,7 +85,29 @@ function adjustLayout() {
     }
   }
 */
-  alert(pxs.zoom);
+  var list = [
+    'load',
+    'splash',
+    'game',
+    'result',
+    'stats',
+    'usage'
+  ];
+
+  var obj;
+
+  for (var i = 0; i < list.length; i++) {
+    obj = document.getElementById(list[i]);
+    obj.style.width = '1200px';
+    obj.style.height = '600px';
+    if (pxs.tate > 600) {
+      obj.style.top = String(Math.round((pxs.tate - 600)/2))+'px';
+    }
+    if (pxs.yoko > 1200) {
+      obj.style.left = String(Math.round((pxs.yoko - 1200)/2))+'px';
+    }
+  } 
+  //alert('w:'+String(pxs.yoko)+' h:'+String(pxs.tate));
   document.getElementsByTagName('html')[0].style.zoom = pxs.zoom;
 }
 

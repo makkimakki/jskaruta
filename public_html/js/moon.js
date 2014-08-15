@@ -4,6 +4,7 @@ var MoonTimer = {
     0: not started
     1: moving
     2: temporary stopped
+    3: stopped before start...
   */
   timer_status: 0,
   max_msec: 10000,
@@ -22,6 +23,7 @@ var MoonTimer = {
 
   startTimer: function(add_msec) {
     if (this.timer_status == 1) return;
+    if (this.timer_status == 3) return;
 
     var self = this;
 
@@ -37,16 +39,22 @@ var MoonTimer = {
   },
 
   stopTimer: function() {
-    var mtimestamp = getMTimeStamp();
-    var add_msec = mtimestamp - this.start_mtimestamp;
-    this.past_msec += add_msec;
-    this.start_mtimestamp = 0;
-    this.timer_status = 2;
+    if (this.timer_status == 1) {
+      var mtimestamp = getMTimestamp();
+      var add_msec = mtimestamp - this.start_mtimestamp;
+      this.past_msec += add_msec;
+      this.start_mtimestamp = 0;
+      this.timer_status = 2;
+    } else if (this.timer_status == 0) {
+      this.timer_status = 3;
+    }
   },
 
   reset: function() {
     this.past_msec = 0;
     this.start_timestamp = null;
+    this.timer_status = 0;
+    this.drawMoonByPercent(1);
   },
 
   drawMoonByTimer: function() {

@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <script src="js/jquery-2.0.3.min.js"></script>
     <script src="js/jquery.cookie.js"></script>
-    <script src="js/karuta.js"></script>
+    <script src="js/karutautil.js"></script>
+    <script src="js/utayomi.js"></script>
+    <script src="js/board.js"></script>
     <script src="js/moon.js"></script>
     <script src="js/etc.js"></script>
     <script src="js/cover.js"></script>
+    <script src="js/dialog.js"></script>
     <script src="js/animation.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/loader.js"></script>
@@ -46,20 +49,22 @@
           <div id="moonArea"><div id="leftM"></div><div id="rightM"></div></div>
 
           <div id="utaArea">
-            <div id="uta1">
-              <span id="u11"></span><span id="u12"></span><span id="u13"></span><span id="u14"></span><span id="u15"></span><span id="u16"></span>
-            </div>
-            <div id="uta2">
-              <span id="u21"></span><span id="u22"></span><span id="u23"></span><span id="u24"></span><span id="u25"></span><span id="u26"></span><span id="u27"></span><span id="u28"></span>
-            </div>
-            <div id="uta3">
-              <span id="u31"></span><span id="u32"></span><span id="u33"></span><span id="u34"></span><span id="u35"></span><span id="u36"></span>
-            </div>
-            <div id="uta4">
-              <span id="u41"></span><span id="u42"></span><span id="u43"></span><span id="u44"></span><span id="u45"></span><span id="u46"></span><span id="u47"></span><span id="u48"></span>
-            </div>
-            <div id="uta5">
-              <span id="u51"></span><span id="u52"></span><span id="u53"></span><span id="u54"></span><span id="u55"></span><span id="u56"></span><span id="u57"></span><span id="u58"></span>
+            <div id="utaAll">
+              <div id="uta1">
+                <span id="u11"></span><span id="u12"></span><span id="u13"></span><span id="u14"></span><span id="u15"></span><span id="u16"></span>
+              </div>
+              <div id="uta2">
+                <span id="u21"></span><span id="u22"></span><span id="u23"></span><span id="u24"></span><span id="u25"></span><span id="u26"></span><span id="u27"></span><span id="u28"></span>
+              </div>
+              <div id="uta3">
+                <span id="u31"></span><span id="u32"></span><span id="u33"></span><span id="u34"></span><span id="u35"></span><span id="u36"></span>
+              </div>
+              <div id="uta4">
+                <span id="u41"></span><span id="u42"></span><span id="u43"></span><span id="u44"></span><span id="u45"></span><span id="u46"></span><span id="u47"></span><span id="u48"></span>
+              </div>
+              <div id="uta5">
+                <span id="u51"></span><span id="u52"></span><span id="u53"></span><span id="u54"></span><span id="u55"></span><span id="u56"></span><span id="u57"></span><span id="u58"></span>
+              </div>
             </div>
           </div>
 
@@ -118,6 +123,8 @@
           <div id="k127" class="karuta"><div id="k127s"></div></div>
           <div id="k128" class="karuta"><div id="k128s"></div></div>
           <div id="k129" class="karuta"><div id="k129s"></div></div>
+
+          <div id="kf1" style="display: none;"></div>
         </div>
 
         <div id="karutaArea2" class="karutaArea" style="display: none;">
@@ -153,6 +160,8 @@
           <div id="k227" class="karuta"><div id="k227s"></div></div>
           <div id="k228" class="karuta"><div id="k228s"></div></div>
           <div id="k229" class="karuta"><div id="k229s"></div></div>
+
+          <div id="kf2" style="display: none;"></div>
         </div>
 
         <div id="karutaArea3" class="karutaArea" style="display: none;">
@@ -188,6 +197,8 @@
           <div id="k327" class="karuta"><div id="k327s"></div></div>
           <div id="k328" class="karuta"><div id="k328s"></div></div>
           <div id="k329" class="karuta"><div id="k329s"></div></div>
+
+          <div id="kf3" style="display: none;"></div>
         </div>
 
         <div id="karutaArea4" class="karutaArea" style="display: none;">
@@ -223,6 +234,8 @@
           <div id="k427" class="karuta"><div id="k427s"></div></div>
           <div id="k428" class="karuta"><div id="k428s"></div></div>
           <div id="k429" class="karuta"><div id="k429s"></div></div>
+
+          <div id="kf4" style="display: none;"></div>
         </div>
       </section>
     </div>

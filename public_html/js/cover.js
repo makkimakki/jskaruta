@@ -42,5 +42,35 @@ var Cover = function() {
     self.obj.style['opacity'] = 1;
     self.obj.className = '';
     spec.next();
+  };
+
+  this.whiteOutAndIn = function(spec) {
+    self.obj.style['opacity'] = 0;
+    self.obj.style['z-index'] = 100;
+    self.obj.style['display'] = 'block';
+    self.obj.className = 'whiteoutandin';
+    setTimeout(function() {
+      self.obj.style['opacity'] = 0;
+      self.obj.style['z-index'] = 1;
+      self.obj.style['display'] = 'none';
+      self.obj.className = '';
+      if (spec) {
+        spec.next();
+      }
+    }, 2000);
+  };
+
+  this.prepareDialogDisplay = function() {
+    self.obj.style['opacity'] = 0;
+    self.obj.style['z-index'] = 100;
+    self.obj.style['display'] = 'block';
+    self.obj.className = 'fadeinfordialog';
+  };
+
+  this.execAfterDialogDisapper = function() {
+    self.obj.style['opacity'] = 0;
+    self.obj.style['z-index'] = 1;
+    self.obj.style['display'] = 'none';
+    self.obj.className = '';
   }
 }

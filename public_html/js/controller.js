@@ -35,6 +35,7 @@ var Controller = function() {
   this.user = null;
 
   this.cover = null;
+  this.dialog = null;
 
   //AnimationController
   this.ac = null;
@@ -47,8 +48,10 @@ var Controller = function() {
     self.tate_px = pxs.tate;
     self.yoko_px = pxs.yoko;
     self.cover = new Cover();
+    self.dialog = new Dialog();
+    self.dialog.linkToCover(self.cover);
     //self.user = new User();
-    self.ac = new AnimationController();
+    //self.ac = new AnimationController();
     //self.user.init();
 
     self.startPhase();

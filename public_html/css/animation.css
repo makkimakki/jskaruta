@@ -18,6 +18,26 @@
   -webkit-animation-play-state: running;
 }
 
+.lfadein {
+  animation:
+     fadein 0.8s linear 0s 1 forwards;
+  -webkit-animation:
+     fadein 0.8s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+.lfadeout {
+  animation:
+     fadeout 0.8s linear 0s 1 forwards;
+  -webkit-animation:
+     fadeout 0.8s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
 .sfadein {
   animation:
      fadein 0.2s linear 0s 1 forwards;
@@ -48,6 +68,38 @@
   -webkit-animation-play-state: running;
 }
 
+.fadeinfordialog {
+  animation:
+     fadeinfordialog 0.02s linear 0s 1 forwards;
+  -webkit-animation:
+     fadeinfordialog 0.02s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+.fadeoutfordialog {
+  animation:
+     fadeoutfordialog 0.02s linear 0s 1 forwards;
+  -webkit-animation:
+     fadeoutfordialog 0.02s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+.whiteoutandin {
+  animation:
+     whiteoutandin 1.5s linear 0s 1 forwards;
+  -webkit-animation:
+     whiteoutandin 1.5s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+
+
 @keyframes fadeout {
   0%   { opacity: 1; }
   100% { opacity: 0; }
@@ -65,6 +117,97 @@
   0%   { opacity: 0; }
   100% { opacity: 1; }
 }
+
+@keyframes fadeinfordialog {
+  0%   {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+@-webkit-keyframes fadeinfordialog {
+  0%   {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+@keyframes fadeoutfordialog {
+  0%   {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes fadeoutfordialog {
+  0%   {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  100% {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes whiteoutandin {
+  0% {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0);
+  }
+  50% {
+    opacity: 1;
+    background: rgba(255, 255, 255, 1);
+  }
+  80% {
+    opacity: 1;
+    background: rgba(255, 255, 255, 1);
+  }
+  99% {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+}
+@-webkit-keyframes whiteoutandin {
+  0% {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0);
+  }
+  50% {
+    opacity: 1;
+    background: rgba(255, 255, 255, 1);
+  }
+  80% {
+    opacity: 1;
+    background: rgba(255, 255, 255, 1);
+  }
+  99% {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0);
+  }
+  100% {
+    opacity: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+
+
+
+
 
 
 
@@ -109,19 +252,38 @@
 
 .dialogdisplay {
   animation:
-     fadein 0.08s linear 0s 1 forwards;
+     dialogdisplay 0.1s linear 0s 1 forwards;
   -webkit-animation:
-     fadein 0.08s linear 0s 1 forwards;
+     dialogdisplay 0.1s linear 0s 1 forwards;
 
   animation-play-state: running;
   -webkit-animation-play-state: running;
 }
 
-@keyframes dialogdisplay2 {
+@keyframes dialogdisplay {
   0%    { transform: scale(0.6); }
   100%  { transform: scale(1); }
 }
-@-webkit-keyframes dialogdisplay2 {
+@-webkit-keyframes dialogdisplay {
   0%    { -webkit-transform: scale(0.6); }
   100%  { -webkit-transform: scale(1); }
+}
+
+.dialogdisppear{
+  animation:
+     dialogdisapper 0.1s linear 0s 1 forwards;
+  -webkit-animation:
+     dialogdisapper 0.1s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+@keyframes dialogdisapper {
+  0%    { transform: scale(1); }
+  100%  { transform: scale(0); }
+}
+@-webkit-keyframes dialogdisapper {
+  0%    { -webkit-transform: scale(1); }
+  100%  { -webkit-transform: scale(0); }
 }

@@ -24,7 +24,7 @@
 .commonScr {
   width: 1200px;
   height: 600px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
 }
@@ -288,6 +288,12 @@
   top: 120px;
 }
 
+#kf1, #kf2, #kf3, #kf4 {
+  position: absolute;
+  width: 100px;
+  height: 140px;
+}
+
 .karuta {
   position: absolute;
   top: 10px;
@@ -410,7 +416,7 @@
   top: 30px;
   text-align: left;
   font-size: 40px;
-  line-height: 1.1em;
+  line-height: 44px;
   color: #FFFFFF;
 }
 
