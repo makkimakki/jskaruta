@@ -11,12 +11,12 @@ var Practice1 = function() {
     5: 札タッチお手つき後、正解確認中
     6: 練習終了
    */
-  const PS_BEFORE_GAME = 1;
+  const PS_BEFORE_GAME    = 1;
   const PS_BEFORE_READING = 2;
-  const PS_READING = 3;
-  const PS_TOUCHED = 4;
+  const PS_READING        = 3;
+  const PS_TOUCHED        = 4;
   const PS_CONFIRM_ANSWER = 5;
-  const PS_FINISHED = 6;  
+  const PS_FINISHED       = 6;  
   this.practice_status = PS_BEFORE_GAME;
 
   //animatingが1の時は入力を受け付けない
@@ -41,6 +41,7 @@ var Practice1 = function() {
     this.controller = controller;
     document.getElementById('game').style['display'] = 'block';
     KarutaBoard.init('practice1');
+    KarutaRecorder.init();
     self.controller.cover.fadein(fadein_spec);
   };
 
@@ -52,17 +53,21 @@ var Practice1 = function() {
 
     UtayomiController.init();
     MoonTimer.initObjs();
-
-    /*
-    UtayomiController.startYomi();
-    setTimeout(function() { UtayomiController.eraseAndDisplayAll(); }, 2000);
-    MoonTimer.initObjs();
-    MoonTimer.startTimer();
-    */
-
-    //self.controller.dialog.init("お手つき！\n第98番 作者は従二位家隆\n(じゅうにいいえたか)です。");
-    //setTimeout(function(){ self.controller.dialog.open(); }, 3000);
   };
+
+  this.recordCurrentCorrect = function() {
+    var current_no = UtayomiController.getCurrentNo();
+    var uta_no = UtayomiController.getCurrentUtaNo();
+    var pos = KarutaBoard.getOriginalRowCol(uta_no);
+    KarutaRecorder.setCorrect(current_no, uta_no, pos.board_id, pos.row, pos.col);
+  };
+
+  this.recordCurrentResult = function(result_no, answer_uta_no) {
+    var current_no = UtayomiController.getCurrentNo();
+    var pos = KarutaBoard.getOriginalRowCol(answer_uta_no);
+    var msec = MoonTimer.getMsec();
+    KarutaRecorder.setResult(current_no, result_no, msec, answer_uta_no, pos.board_id, pos.row, pos.col);
+  }
 
   this.setKarutaClickListeners = function() {
     var uta_no_list = KarutaBoard.getInitialUtaNoList();
@@ -82,6 +87,7 @@ var Practice1 = function() {
   this.karutaclick_specs = {};
   this.karutaclick_specs[PS_BEFORE_GAME] = {
     next: function() {
+      self.recordCurrentCorrect();
       self.is_animating = 0;
       self.setStatus(PS_BEFORE_READING);
       setTimeout(function() {
@@ -93,13 +99,19 @@ var Practice1 = function() {
   };
   this.karutaclick_specs[PS_BEFORE_READING] = {
     next: function(obj) {
+      //結果を記録
+      var result_no = 2;
+      var answer_uta_no = obj.karuta_uta_no;
+      self.recordCurrentResult(result_no, answer_uta_no);
+
       self.is_animating = 0;
       self.setStatus(PS_TOUCHED);
       //ダイアログ表示
-      var author = KarutaUtil.getAuthor(obj.karuta_uta_no);
+      var correct_no = UtayomiController.getCurrentUtaNo();
+      var author = KarutaUtil.getAuthor(correct_no);
       self.controller.dialog.init(
         "お手つき！札がまだ詠まれていません！\n"+
-        "第"+String(obj.karuta_uta_no)+"番 作者は"+author.kanji+"\n"+
+        "第"+String(correct_no)+"番 作者は"+author.kanji+"\n"+
         "("+author.yomi+")です。",
         self.dialog_specs[PS_BEFORE_READING]['btn1'],
         self.dialog_specs[PS_BEFORE_READING]['btn2']
@@ -109,10 +121,39 @@ var Practice1 = function() {
   };
   this.karutaclick_specs[PS_READING] = {
     next: function(obj) {
+      //結果を記録
+      var result_no;
+      var answer_uta_no = obj.karuta_uta_no;
+      if (answer_uta_no == UtayomiController.getCurrentUtaNo()) {
+        result_no = 1;
+      } else {
+        result_no = 3;
+      }
+      self.recordCurrentResult(result_no, answer_uta_no);
+
       self.is_animating = 0;
       self.setStatus(PS_TOUCHED);
       //ダイアログ表示
+      var correct_no = UtayomiController.getCurrentUtaNo();
+      var author = KarutaUtil.getAuthor(correct_no);
 
+      if (result_no == 1) {
+        self.controller.dialog.init(
+          "正解！\n"+
+          "第"+String(correct_no)+"番 作者は"+author.kanji+"\n"+
+          "("+author.yomi+")です。",
+          self.dialog_specs[PS_READING]['btn1']
+        );
+      } else {
+        self.controller.dialog.init(
+          "お手つき！\n"+
+          "第"+String(correct_no)+"番 作者は"+author.kanji+"\n"+
+          "("+author.yomi+")です。",
+          self.dialog_specs[PS_READING]['btn1'],
+          self.dialog_specs[PS_READING]['btn2']
+        );
+      }
+      self.controller.dialog.open();
     }
   };
 
@@ -121,8 +162,18 @@ var Practice1 = function() {
     btn1: {
       label: '次に進む',
       execute: function() {
+        //正解札を取り除き、お手つきした時はタッチした札を元の場所に戻す。
+        var current_no = UtayomiController.getCurrentNo();
+        var rec = KarutaRecorder.getRecord(current_no);
+
+        if (rec.correct.uta_no != rec.result.uta_no) {
+          KarutaBoard.restoreObj(rec.result.uta_no);  
+        }
+        KarutaBoard.removeObj(rec.correct.uta_no);
+
         MoonTimer.reset();
         UtayomiController.stepToNext();
+        self.recordCurrentCorrect();
         self.setStatus(PS_BEFORE_READING);
         setTimeout(function() {
           self.setStatus(PS_READING);
@@ -134,9 +185,11 @@ var Practice1 = function() {
     btn2: {
       label: '正解を確認',
       execute: function() {
+        //TODO: 正解の取り札がある陣地に移動して、正解札を光らせる。
       }
     },
   };
+  this.dialog_specs[PS_READING] = this.dialog_specs[PS_BEFORE_READING];
 
   this.setStatus = function(status_id) {
     self.practice_status = status_id;
@@ -184,18 +237,6 @@ var Practice1 = function() {
       return;
     }
   };
-
-/*
-  this.flyKaruta = function() {
-    this.style['z-index'] = '100';
-    this.className = 'karuta rrotate';
-    var obj = this;
-    setTimeout(function() {
-      obj.className = 'karuta';
-      console.log(obj.karuta_uta_no);
-    }, 2000);
-  };
-*/
 
   this.toNextJinchi = function() {
     if (self.is_animating) return;

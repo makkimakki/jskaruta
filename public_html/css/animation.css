@@ -287,3 +287,61 @@
   0%    { -webkit-transform: scale(1); }
   100%  { -webkit-transform: scale(0); }
 }
+
+
+.flash{
+  animation:
+     flash 2s linear 0s infinite forwards;
+  -webkit-animation:
+     flash 2s linear 0s infinite forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+    background: rgba(255, 255, 0, 1);
+    background: radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  50% {
+    opacity: 0.9;
+    background: radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  55% {
+    opacity: 0.9;
+    background: radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  80% {
+    opacity: 0;
+    background: radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  100% {
+    opacity: 0;
+    background: radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+
+}
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0;
+    background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  50% {
+    opacity: 0.9;
+    background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  55% {
+    opacity: 0.9;
+    background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  80% {
+    opacity: 0;
+    background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+  100% {
+    opacity: 0;
+    background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
+  }
+}

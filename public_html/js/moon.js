@@ -50,6 +50,13 @@ var MoonTimer = {
     }
   },
 
+  getMsec: function() {
+    if (this.timer_status == 3) {
+      return -1;
+    }
+    return this.past_msec;
+  },
+
   reset: function() {
     this.past_msec = 0;
     this.start_timestamp = null;

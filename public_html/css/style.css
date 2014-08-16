@@ -2,7 +2,7 @@
 /* CSS Document */
 
 * {
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'Helvetica Neue',"ＭＳ ゴシック",Helvetica,Arial,sans-serif;
 }
 
 .tateDisplay {
@@ -159,27 +159,27 @@
 }
 
 #uta1 {
-  width: 240px;
+  width: 250px;
   left: 15px;
   top: 15px;
 }
 #uta2 {
-  width: 320px;
+  width: 330px;
   left: 295px;
   top: 15px;
 }
 #uta3 {
-  width: 240px;
+  width: 250px;
   left: 655px;
   top: 15px;
 }
 #uta4 {
-  width: 320px;
+  width: 330px;
   left: 15px;
   top: 65px;
 }
 #uta5 {
-  width: 320px;
+  width: 330px;
   left: 375px;
   top: 65px;
 }
@@ -300,6 +300,8 @@
   left: 10px;
   width: 100px;
   height: 140px;
+  font-size: 20px;
+  letter-spacing: -0.05em;
 }
 
 .karuta div {

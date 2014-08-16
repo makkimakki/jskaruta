@@ -72,6 +72,7 @@ var Utayomi = {
     };
   },
   startYomi: function(uta_no) {
+    //TODO: ここであらかじめすべての文字をopacity 0でセットしておいた方がよさそう。
     this.uta_no = uta_no;
     this.yomi_list = KarutaUtil.getYomi(uta_no);
     this.yomi_status = 1;
@@ -172,7 +173,7 @@ var Utayomi = {
 
       while (keys && counter < 100) {
         self.objs[keys.key1][keys.key2].innerHTML = self.yomi_list[keys.key1][keys.key2];
-        self.objs[keys.key1][keys.key2].classNae = '';
+        self.objs[keys.key1][keys.key2].className = '';
         self.prev_char.key1 = keys.key1;
         self.prev_char.key2 = keys.key2;
         keys = self.getNextCharKey();
@@ -233,6 +234,12 @@ var UtayomiController = {
       return this.current_no;
     }
     return false;
+  },
+  getCurrentNo: function() {
+    return this.current_no;
+  },
+  getCurrentUtaNo: function() {
+    return this.yomi_order_list[this.current_no];
   },
   startYomi: function() {
     this.utayomi.startYomi(this.yomi_order_list[this.current_no]);
