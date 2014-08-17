@@ -18,6 +18,7 @@
     <script src="js/loader.js"></script>
     <script src="js/splash.js"></script>
     <script src="js/practice1.js"></script>
+    <script src="js/result.js"></script>
     <script src="js/usage.js"></script>
     <link rel="stylesheet" media="screen" href="css/reset.css" />
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -70,9 +71,9 @@
           </div>
 
           <div id="scoreArea">
-            <div id="rightD">
-              <span id="rightT">正: </span>
-              <span id="rightCount">153</span>
+            <div id="correctD">
+              <span id="correctT">正: </span>
+              <span id="correctCount">153</span>
             </div>
             <div id="wrongD">
               <span id="wrongT">誤: </span>
@@ -242,9 +243,48 @@
     </div>
 
     <div id="result" class="yokoDisplay" style="display: none;">
-      <section id="r1Scr" class="commonScr">
+      <div class="titleArea">
+        <h2 class="title">今回の結果</h2>
+      </div>
+      <section id="r1Scr" class="lowScr">
+        <table class="resultTable" border> 
+          <tr>
+            <th>取れた札数</th>
+            <td id="correctTd"></td>
+            <td id="correctSTd"></td>
+          </tr>
+          <tr>
+            <th>スルーした空札数</th>
+            <td id="throughTd"></td>
+            <td id="throughSTd"></td>
+          </tr>
+          <tr>
+            <th>お手つきの回数</th>
+            <td id="wrongTd"></td>
+            <td id="wrongSTd"></td>
+          </tr>
+          <tr>
+            <th>トータル時間</th>
+            <td id="timeTd"></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>平均反応時間</th>
+            <td id="resTd"></td>
+            <td id="resSTd"></td>
+          </tr>
+          <tr>
+            <th>トータルスコア</th>
+            <td></td>
+            <td id="totalSTd"></td>
+          </tr>
+        </table>
+        <div id="rBtnArea">
+          <button type="button" id="r_retry_btn">もう一度挑戦</button>
+          <button type="button" id="r_top_btn">トップへ</button>
+        </div>
       </section>
-      <section id="r2Scr" class="commonScr">
+      <section id="r2Scr" class="lowScr" style="display: none;">
       </section>
     </div>
 

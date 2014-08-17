@@ -15,6 +15,20 @@ var NumberUtil = {
   },
   getRandomInt: function(min, max) {
     return Math.floor( Math.random() * (max - min + 1) ) + min;
+  },
+  convertSecondsToMS: function(seconds) {
+    var ret = {};
+    ret.seconds = seconds % 60;
+    ret.minutes = (seconds - ret.seconds) / 60;
+    ret.string  = String(ret.minutes);
+    if (ret.seconds == 0) {
+      ret.string = ret.string+':00';
+    } else if (ret.seconds < 10) {
+      ret.string = ret.string+':0'+String(seconds);
+    } else {
+      ret.string = ret.string+String(seconds);
+    }
+    return ret;
   }
 };
 

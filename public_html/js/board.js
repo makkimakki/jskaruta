@@ -81,11 +81,12 @@ var KarutaBoard = {
       obj2: document.getElementById('k'+base_obj_id+'s')
     };
 
-    var pos = this.getKarutaPos(row, col);
+    var pos = this.getKarutaPos(board_id, row, col);
     this.objs[board_id][row][col]['obj1']['karuta_uta_no'] = uta_no;
-    this.objs[board_id][row][col]['obj1'].style.top = String(pos.top)+'px';
-    this.objs[board_id][row][col]['obj1'].style.top = String(pos.top)+'px';
-    this.objs[board_id][row][col]['obj1'].style.left = String(pos.left)+'px';
+    this.objs[board_id][row][col]['obj1'].className = 'karuta';
+    this.objs[board_id][row][col]['obj1'].style['top'] = String(pos.top)+'px';
+    this.objs[board_id][row][col]['obj1'].style['left'] = String(pos.left)+'px';
+    this.objs[board_id][row][col]['obj1'].style['display'] = 'block';
 
     if (uta_no) {
       this.objs[board_id][row][col]['obj2'].innerHTML = KarutaUtil.getTorifudaHtml(uta_no);
@@ -110,7 +111,7 @@ var KarutaBoard = {
     }
   },
 
-  getKarutaPos: function(row, col) {
+  getKarutaPos: function(board_id, row, col) {
     var base_left = 17;
     var base_top = 35;
     var space = 5;
@@ -145,9 +146,27 @@ var KarutaBoard = {
     }, 2000);
   },
   startFlash: function(uta_no) {
-    var rc = this.getOriginalRowCol(uta_no);
-    getKarutaPos
+    var rc  = this.getOriginalRowCol(uta_no);
+    var pos = this.getKarutaPos(rc.board_id, rc.row, rc.col);
 
+    this.flash_objs[rc.board_id].style['left'] = String(pos.left)+'px';
+    this.flash_objs[rc.board_id].style['top']  = String(pos.top)+'px';
+    this.flash_objs[rc.board_id].style['display'] = 'block';
+    this.flash_objs[rc.board_id].className = 'flash';
+    //this.flash_objs[rc.board_id].style['background-color'] = '#F00';
+    this.flash_objs[rc.board_id].style['z-index'] = '3';
+    this.flash_objs[rc.board_id].is_flashing = 1;
+
+    console.log(this.flash_objs[rc.board_id].style);
+    console.log(this.flash_objs[rc.board_id]);
+  },
+  stopFlash: function(uta_no) {
+    var rc  = this.getOriginalRowCol(uta_no);
+
+    this.flash_objs[rc.board_id].style['display'] = 'none';
+    this.flash_objs[rc.board_id].style['z-index'] = '1';
+    this.flash_objs[rc.board_id].className  = '';
+    this.flash_objs[rc.board_id].is_flashing = 0;
   },
   getInitialUtaNoList: function() {
     return this.initial_uta_no_list;
@@ -159,6 +178,9 @@ var KarutaBoard = {
     var rc = this.getOriginalRowCol(uta_no);
     console.log(rc);
     return this.objs[rc.board_id][rc.row][rc.col];
+  },
+  getFlashObj: function(board_id) {
+    return this.flash_objs[board_id];
   },
   restoreObj: function(uta_no) {
     var obj = this.getObj(uta_no);

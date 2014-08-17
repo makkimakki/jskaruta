@@ -79,6 +79,11 @@ var Controller = function() {
         self.phase_obj.init(self);
         break;
 
+      case 'result':
+        self.phase_obj = new Result();
+        self.phase_obj.init(self);
+        break;
+
       case 'usage':
         self.phase_obj = new Usage();
         self.phase_obj.init(self);
@@ -115,7 +120,19 @@ var Controller = function() {
           next_phase = set_next_phase;
         }
         break;
-    }
+
+      case 'practice1':
+        next_phase = 'result';
+        break;
+
+      case 'result':
+        if (set_next_phase == 'splash'
+          || set_next_phase == 'practice1'
+        ) {
+          next_phase = set_next_phase;
+        }
+        break;
+    } 
 
     self.finished_phase_list[self.current_phase] = 1;
 

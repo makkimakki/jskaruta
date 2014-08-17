@@ -10,6 +10,7 @@ var MoonTimer = {
   max_msec: 10000,
   past_msec: 0,
   start_mtimestamp: null,
+  stop_mtimestamp: null,
   interval_msec: 100,
   objs: {
     left: null,
@@ -43,11 +44,20 @@ var MoonTimer = {
       var mtimestamp = getMTimestamp();
       var add_msec = mtimestamp - this.start_mtimestamp;
       this.past_msec += add_msec;
+      this.stop_mtimestamp = mtimestamp;
       this.start_mtimestamp = 0;
       this.timer_status = 2;
     } else if (this.timer_status == 0) {
       this.timer_status = 3;
     }
+  },
+
+  getStartMTimestamp: function() {
+    return this.start_mtimestamp;
+  },
+
+  getStopMTimestamp: function() {
+    return this.stop_mtimestamp;
   },
 
   getMsec: function() {

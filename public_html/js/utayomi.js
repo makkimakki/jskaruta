@@ -213,9 +213,10 @@ var UtayomiController = {
 
   init: function() {
     this.utayomi.initObjs();
+    this.utayomi.reset();
     this.current_no = 0;
 
-    var length = 100;
+    var length = 1;
 
     //1〜100を並び替えた配列を作る
     var arr = new Array(length);
@@ -252,6 +253,10 @@ var UtayomiController = {
   },
   erase: function() {
     this.utayomi.eraseUtaDisplay();
+  },
+  isLast: function() {
+    if (this.current_no == this.length - 1) return 1;
+    return 0;
   }
 };
 
