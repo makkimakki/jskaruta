@@ -216,7 +216,7 @@ var UtayomiController = {
     this.utayomi.reset();
     this.current_no = 0;
 
-    var length = 1;
+    var length = 100;
 
     //1〜100を並び替えた配列を作る
     var arr = new Array(length);

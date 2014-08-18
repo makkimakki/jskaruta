@@ -24,9 +24,9 @@ var NumberUtil = {
     if (ret.seconds == 0) {
       ret.string = ret.string+':00';
     } else if (ret.seconds < 10) {
-      ret.string = ret.string+':0'+String(seconds);
+      ret.string = ret.string+':0'+String(ret.seconds);
     } else {
-      ret.string = ret.string+String(seconds);
+      ret.string = ret.string+':'+String(ret.seconds);
     }
     return ret;
   }
@@ -122,6 +122,11 @@ function adjustLayout() {
     }
   } 
   //alert('w:'+String(pxs.yoko)+' h:'+String(pxs.tate));
+
+  if (tate > yoko) {
+    alert('画面を横にしてアクセスし直して下さい');
+  }
+
   document.getElementsByTagName('html')[0].style.zoom = pxs.zoom;
 }
 

@@ -1,6 +1,7 @@
 var Practice1 = function() {
   this.controller = null;
   this.current_jinchi = 1;
+  this.bg_color = '#000055';
 
   /*
     practice_status
@@ -46,6 +47,7 @@ var Practice1 = function() {
     MoonTimer.initObjs();
     MoonTimer.reset();
     document.getElementById('game').style['display'] = 'block';
+    document.body.style['background-color'] = self.bg_color;
     KarutaBoard.init('practice1');
     KarutaRecorder.init();
     ScoreBoard.init();
@@ -291,6 +293,9 @@ var Practice1 = function() {
       //かるた飛ばし後、結果を記録してお手つきのダイアログ表示
       self.is_animating = 1;
       MoonTimer.stopTimer();
+      if (!KarutaRecorder.getStartMTimestamp()) {
+        KarutaRecorder.setStartMTimestamp(getMTimestamp());
+      }
       UtayomiController.eraseAndDisplayAll();
       KarutaBoard.flyKaruta(obj, self.karutaclick_specs[self.practice_status]);
       return;
@@ -393,6 +398,7 @@ var Practice1 = function() {
     next_secnods: 1,
     next: function() {
       document.getElementById('game').style['display'] = 'none';
+      document.body.style['background-color'] = '#FFFFFF';
       self.controller.finishPhase(this.next_phase);
     }
   };

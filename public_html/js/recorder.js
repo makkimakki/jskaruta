@@ -31,6 +31,14 @@ var KarutaRecorder = {
     this.end_mtimestamp = mtimestamp;
   },
 
+  getStartMTimestamp: function(mtimestamp) {
+    return this.start_mtimestamp;
+  },
+
+  getEndMTimestamp: function(mtimestamp) {
+    return this.end_mtimestamp;
+  },
+
   setCorrect: function(yomi_order, uta_no, board_id, row, col) {
     if (!this.record_list[yomi_order]) {
       this.record_list[yomi_order] = {};
@@ -111,7 +119,7 @@ var KarutaRecorder = {
     ret.correctS = ret.correct * this.correct_point;
     ret.throughS = ret.through * this.karafuda_through_point;
     ret.wrongS   = ret.wrong * this.otetsuki_point;
-    ret.res      = Math.round(res_msec_sum * ret.correct) / 1000;
+    ret.res      = Math.round(res_msec_sum / ret.correct) / 1000;
     ret.resS     = Math.round(res_point_msec * this.time_bonus_rate / 1000);
     ret.time     = tobj.string;
     ret.totalS   = ret.correctS + ret.throughS + ret.wrongS + ret.resS;
