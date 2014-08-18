@@ -330,7 +330,7 @@
 }
 .karuta div p { 
   display: inline-block;
-  width: 80px;
+  width: 100px;
   height: 120px;
   font-size: 20px;
   line-height: 25px;
@@ -468,7 +468,7 @@
   top: 120px;
   left: 200px;
   background: rgba(255, 255, 255, 1);
-  border: solid 1px #555555;
+  border: solid 1px #555555; 
 	box-shadow: 5px 5px 10px rgba(0, 0, 0,0.2), -5px 5px 10px rgba(0,0,0,0.2), 5px -5px 10px rgba(0,0,0,0.2), -5px -5px 10px rgba(0,0,0,0.2);
 }
 

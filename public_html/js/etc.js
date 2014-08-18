@@ -32,6 +32,17 @@ var NumberUtil = {
   }
 };
 
+var DeviceUtil = {
+  isIOS: function(){
+    var ua = navigator.userAgent;
+    return (ua.match(/iPad/i) || ua.match(/iPhone/i)) ? true : false;
+  },
+  isAndroid: function(){
+    var ua = navigator.userAgent;
+    return ua.match(/Android/i) ? true : false;
+  }
+}
+
 var ArrayUtil = {
   getRandomArray: function(arr) {
     var tmp_arr = arr.slice(0);
