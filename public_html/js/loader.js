@@ -44,6 +44,7 @@ var Loader = function() {
       });
 
     } else if (type == 'sound') {
+/*
       $.ajax({
         url: this.srcs[type][key],
         dataType: "text",
@@ -56,6 +57,7 @@ var Loader = function() {
         error: function(data) {
         }
       });
+*/
     }
   };
 

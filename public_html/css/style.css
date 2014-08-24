@@ -56,10 +56,10 @@
 
 .splashBtn {
   display: block;
-  width: 200px;
+  width: 250px;
   height: 50px;
   position: absolute;
-  left: 50px;
+  left: 25px;
   font-size: 20px;
 }
 
@@ -469,8 +469,8 @@
   position: fixed;
   top: 120px;
   left: 200px;
-  background: rgba(255, 255, 255, 1);
-  border: solid 1px #555555; 
+  background: rgba(150, 150, 150, 1);
+  border: solid 1px #555555;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0,0.2), -5px 5px 10px rgba(0,0,0,0.2), 5px -5px 10px rgba(0,0,0,0.2), -5px -5px 10px rgba(0,0,0,0.2);
 }
 
