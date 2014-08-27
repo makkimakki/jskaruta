@@ -64,8 +64,8 @@ var Practice1 = function() {
   this.start = function() {
     //イベントリスナーの準備
     self.setKarutaClickListeners();
-    self.jbobjs.next.addEventListener('touchstart', self.toNextJinchi);
-    self.jbobjs.prev.addEventListener('touchstart', self.toPrevJinchi);
+    self.jbobjs.next.addEventListener(self.event_name, self.toNextJinchi);
+    self.jbobjs.prev.addEventListener(self.event_name, self.toPrevJinchi);
   };
 
   this.setKarutaClickListeners = function() {
