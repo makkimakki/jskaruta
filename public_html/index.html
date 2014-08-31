@@ -244,9 +244,10 @@
     <div id="result" class="yokoDisplay" style="display: none;">
       <div class="titleArea">
         <h2 class="title">今回の結果</h2>
+        <button type="button" id="rc_btn">結果詳細</button>
       </div>
       <section id="r1Scr" class="lowScr">
-        <table class="resultTable" border> 
+        <table class="resultTable"> 
           <tr>
             <th>取れた札数</th>
             <td id="correctTd"></td>
@@ -284,6 +285,20 @@
         </div>
       </section>
       <section id="r2Scr" class="lowScr" style="display: none;">
+        <div class="rDetailTableArea" id="rDetailTableArea">
+          <table class="rDetailTable" id="rDetailTable">
+            <tr class="titleTr">
+              <td class="tds">詠み順</td>
+              <td class="tds">結果</td>
+              <td class="tdl">反応時間</td>
+              <td class="tds">歌番号</td>
+            </tr>
+<!--
+            <tr class="rw"><td>1</td><td>正解</td><td>2.145秒</td><td>1番</td></tr>
+            <tr class="rw"><td class="utatd" colspan="4">秋の田の刈り穂の庵の苫を荒み 我が衣では露に濡れつつ</td> </tr>
+-->
+          </table>
+        </div>
       </section>
     </div>
 

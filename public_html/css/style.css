@@ -37,6 +37,14 @@
   left: 0;
 }
 
+.fblue {
+  color: #0000a0;
+}
+
+.fred {
+  color: #a00000;
+}
+
 #appli_title {
   width: 300px;
   height: 100px;
@@ -380,6 +388,65 @@
   text-align: right;
 }
 
+.rDetailTableArea {
+  width: 900px;
+  height: 460px;
+  position: absolute;
+  top: 0;
+  left: 150px;
+  overflow-y: scroll;
+}
+
+.rDetailTable {
+  width: 900px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-collapse: collapse;
+}
+
+.rDetailTable .titleTr td {
+  font-size: 30px;
+  height: 50px;
+	background: linear-gradient(0deg, rgba(220, 220, 220, 1) 0%, rgba(250, 250, 250, 1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(220, 220, 220, 1) 0%, rgba(250, 250, 250, 1) 100%);
+}
+
+.rDetailTable .tds {
+  width: 200px;
+}
+
+.rDetailTable .tdl {
+  width: 300px;
+}
+
+.rDetailTable .rw td {
+  background: rgba(230, 230, 255, 1);
+}
+
+.rDetailTable .rd td {
+  background: rgba(255, 255, 200, 1);
+}
+
+.rDetailTable .rr td {
+  background: rgba(255, 230, 230, 1);
+}
+
+.rDetailTable .utatd {
+  text-align: left;
+  padding: 6px;
+  padding-left: 60px;
+  color: #777777;
+  font-size: 25px;
+}
+
+.rDetailTable td {
+  vertical-align: middle;
+  font-size: 27px;
+  padding: 5px;
+}
+
+
 #rBtnArea {
   /* background: rgba(100, 255, 100, 1); */
   height: 100px;
@@ -406,7 +473,14 @@
   top: 20px;
 }
 
-
+#rc_btn {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 150px;
+  font-size: 20px;
+}
 
 
 
