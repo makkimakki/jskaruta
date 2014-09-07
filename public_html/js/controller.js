@@ -37,9 +37,6 @@ var Controller = function() {
   this.cover = null;
   this.dialog = null;
 
-  //AnimationController
-  this.ac = null;
-
   this.sound_enabled = 1;
 
 
@@ -51,7 +48,6 @@ var Controller = function() {
     self.dialog = new Dialog();
     self.dialog.linkToCover(self.cover);
     //self.user = new User();
-    //self.ac = new AnimationController();
     //self.user.init();
 
     self.startPhase();

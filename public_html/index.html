@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <script src="js/jquery-2.0.3.min.js"></script>
-    <script src="js/jquery.cookie.js"></script>
+    <!-- script src="js/jquery-2.0.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script -->
     <script src="js/karutautil.js"></script>
     <script src="js/utayomi.js"></script>
     <script src="js/board.js"></script>
@@ -13,7 +13,6 @@
     <script src="js/etc.js"></script>
     <script src="js/cover.js"></script>
     <script src="js/dialog.js"></script>
-    <script src="js/animation.js"></script>
     <script src="js/controller.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/splash.js"></script>
@@ -245,9 +244,10 @@
     <div id="result" class="yokoDisplay" style="display: none;">
       <div class="titleArea">
         <h2 class="title">今回の結果</h2>
+        <button type="button" id="rc_btn">結果詳細</button>
       </div>
       <section id="r1Scr" class="lowScr">
-        <table class="resultTable" border> 
+        <table class="resultTable"> 
           <tr>
             <th>取れた札数</th>
             <td id="correctTd"></td>
@@ -285,6 +285,20 @@
         </div>
       </section>
       <section id="r2Scr" class="lowScr" style="display: none;">
+        <div class="rDetailTableArea" id="rDetailTableArea">
+          <table class="rDetailTable" id="rDetailTable">
+            <tr class="titleTr">
+              <td class="tds">詠み順</td>
+              <td class="tds">結果</td>
+              <td class="tdl">反応時間</td>
+              <td class="tds">歌番号</td>
+            </tr>
+<!--
+            <tr class="rw"><td>1</td><td>正解</td><td>2.145秒</td><td>1番</td></tr>
+            <tr class="rw"><td class="utatd" colspan="4">秋の田の刈り穂の庵の苫を荒み 我が衣では露に濡れつつ</td> </tr>
+-->
+          </table>
+        </div>
       </section>
     </div>
 
@@ -349,8 +363,7 @@
       <div id="dialog" style="display: none;">
         <div id="dMsgArea">
           <p id="dMsg">お手つき！<br />第98番 作者は従二位家隆<br />(じゅうにいいえたか)です。</p>
-        </div>
-        <div class="dBtnArea">
+        </div><div class="dBtnArea">
           <button type="button" id="d1_btn">次へ進む</button>
           <button type="button" id="d2_btn">正解を確認する</button>
         </div>
@@ -369,7 +382,8 @@
     setTimeout(scrollTo, 0, 0, 1);
 
     //画面回転時に正しい位置に戻す。
-    $(window).on('orientationchange', function() {
+    //$(window).on('orientationchange', function() {
+    window.addEventListener('orientationchange', function() {
       window.scrollTo(0,0);
     });
 

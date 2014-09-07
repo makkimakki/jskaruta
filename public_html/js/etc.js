@@ -40,6 +40,13 @@ var DeviceUtil = {
   isAndroid: function(){
     var ua = navigator.userAgent;
     return ua.match(/Android/i) ? true : false;
+  },
+  getIOSVersion: function(){
+    if (!this.isIOS()) return null;
+    var ua = navigator.userAgent;
+    var uaindex = ua.indexOf('OS ');
+
+    return ua.substr(uaindex + 3, 3).replace('_', '.').charAt(0);
   }
 }
 
@@ -150,56 +157,28 @@ var scroll = {
     var margin = 3;
 
     //elm_hは、中身のコンテンツの長さ - 枠の長さ
+
+    if (event.target.className.search('touchtd') >= 0) {
+      console.log(document.getElementById('rDetailTableArea').scrollTop);
+      return;
+    }
+
     switch (event.target.className) {
-      case 'tpolicyP':
-        return;
-        break;
-
-      case 'voiceBtnL':
-      case 'voiceBtn':
-      case 'toMainArea':
-        tate_px = getTatePx();
-        elm = document.getElementById('voiceScroll');
-        elm_h = 1140 - (tate_px - 88);
-        break;
-
-      case 'pIntro':
-      case 'pDigit':
-      case 'pSRank':
-      case 'pRank':
-      case 'pList':
-      case 'presentBtn':
-        tate_px = getTatePx();
-        elm = document.getElementById('presentScroll');
-        elm_h = 1222 - (tate_px - 88);
-        break;
-
-      case 'uScrollCover':
-      case 'polScrollCover':
-        tate_px = getTatePx();
-        elm_h = 2058 - (tate_px - 88);
-
-        if (event.target.className == 'uScrollCover') {
-          elm = document.getElementById('usageScroll');
-        } else {
-          elm = document.getElementById('polScroll');
-        }
-        break;
-
       default:
         event.preventDefault();
         return;
     }
 
+
     //androidの場合、制御をあきらめる。
-    if (TALUtility.isAndroid()) {
+    if (DeviceUtil.isAndroid()) {
       return;
 
-    } else if (TALUtility.getIOSVersion() == 6) {
+    } else if (DeviceUtil.getIOSVersion() == 6) {
       elm_h -= 17;
     }
 
-
+/*
     if (elm_h > margin * 1) {
       if (elm.scrollTop > elm_h - margin) {
         elm.scrollTop = elm_h - margin - 1;
@@ -211,5 +190,6 @@ var scroll = {
       }
       return;
     }
+*/
   }
 }

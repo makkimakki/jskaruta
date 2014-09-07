@@ -37,6 +37,14 @@
   left: 0;
 }
 
+.fblue {
+  color: #0000a0;
+}
+
+.fred {
+  color: #a00000;
+}
+
 #appli_title {
   width: 300px;
   height: 100px;
@@ -56,10 +64,10 @@
 
 .splashBtn {
   display: block;
-  width: 200px;
+  width: 250px;
   height: 50px;
   position: absolute;
-  left: 50px;
+  left: 25px;
   font-size: 20px;
 }
 
@@ -151,11 +159,13 @@
 
 #utaArea {
   width: 910px;
-  height: 120px;
+  height: 106px;
   position: absolute;
   left: 130px;
-  top: 0;
-  background: url(../img/utaback.png) no-repeat center;
+  top: 6px;
+  /* background: url(../img/utaback.png) no-repeat center; */
+  background: rgba(255, 255, 255, 1);
+  border-radius: 30px 30px 30px 30px / 30px 30px 30px 30px;
 }
 
 #uta1, #uta2, #uta3, #uta4, #uta5 {
@@ -168,27 +178,27 @@
 #uta1 {
   width: 220px;
   left: 35px;
-  top: 20px;
+  top: 14px;
 }
 #uta2 {
   width: 300px;
   left: 315px;
-  top: 20px;
+  top: 14px;
 }
 #uta3 {
   width: 220px;
   left: 655px;
-  top: 20px;
+  top: 14px;
 }
 #uta4 {
   width: 300px;
   left: 35px;
-  top: 65px;
+  top: 59px;
 }
 #uta5 {
   width: 300px;
   left: 375px;
-  top: 65px;
+  top: 59px;
 }
 
 #scoreArea {
@@ -378,6 +388,65 @@
   text-align: right;
 }
 
+.rDetailTableArea {
+  width: 900px;
+  height: 460px;
+  position: absolute;
+  top: 0;
+  left: 150px;
+  overflow-y: scroll;
+}
+
+.rDetailTable {
+  width: 900px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-collapse: collapse;
+}
+
+.rDetailTable .titleTr td {
+  font-size: 30px;
+  height: 50px;
+	background: linear-gradient(0deg, rgba(220, 220, 220, 1) 0%, rgba(250, 250, 250, 1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(220, 220, 220, 1) 0%, rgba(250, 250, 250, 1) 100%);
+}
+
+.rDetailTable .tds {
+  width: 200px;
+}
+
+.rDetailTable .tdl {
+  width: 300px;
+}
+
+.rDetailTable .rw td {
+  background: rgba(230, 230, 255, 1);
+}
+
+.rDetailTable .rd td {
+  background: rgba(255, 255, 200, 1);
+}
+
+.rDetailTable .rr td {
+  background: rgba(255, 230, 230, 1);
+}
+
+.rDetailTable .utatd {
+  text-align: left;
+  padding: 6px;
+  padding-left: 60px;
+  color: #777777;
+  font-size: 25px;
+}
+
+.rDetailTable td {
+  vertical-align: middle;
+  font-size: 27px;
+  padding: 5px;
+}
+
+
 #rBtnArea {
   /* background: rgba(100, 255, 100, 1); */
   height: 100px;
@@ -404,7 +473,14 @@
   top: 20px;
 }
 
-
+#rc_btn {
+  width: 200px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 150px;
+  font-size: 20px;
+}
 
 
 
@@ -467,8 +543,8 @@
   position: fixed;
   top: 120px;
   left: 200px;
-  background: rgba(255, 255, 255, 1);
-  border: solid 1px #555555; 
+  background: rgba(150, 150, 150, 1);
+  border: solid 1px #555555;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0,0.2), -5px 5px 10px rgba(0,0,0,0.2), 5px -5px 10px rgba(0,0,0,0.2), -5px -5px 10px rgba(0,0,0,0.2);
 }
 

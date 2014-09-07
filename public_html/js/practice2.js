@@ -1,8 +1,7 @@
-var Practice1 = function() {
+var Practice2 = function() {
   this.controller = null;
   this.current_jinchi = 1;
   this.bg_color = '#000055';
-  this.event_name = 'click';
 
   /*
     practice_status
@@ -40,12 +39,6 @@ var Practice1 = function() {
   var self = this;
 
   this.init = function(controller) {
-    if (DeviceUtil.isIOS() || DeviceUtil.isAndroid()) {
-      self.event_name = 'touchstart';
-    } else {
-      self.event_name = 'click';
-    }
-
     self.controller = controller;
     self.is_animating = 0;
     self.setStatus(PS_BEFORE_GAME);
@@ -64,8 +57,8 @@ var Practice1 = function() {
   this.start = function() {
     //イベントリスナーの準備
     self.setKarutaClickListeners();
-    self.jbobjs.next.addEventListener(self.event_name, self.toNextJinchi);
-    self.jbobjs.prev.addEventListener(self.event_name, self.toPrevJinchi);
+    self.jbobjs.next.addEventListener('click', self.toNextJinchi);
+    self.jbobjs.prev.addEventListener('click', self.toPrevJinchi);
   };
 
   this.setKarutaClickListeners = function() {
@@ -76,7 +69,7 @@ var Practice1 = function() {
       for (var j = 0; j < uta_no_list[i].length; j++) {
         for (var k = 0; k < uta_no_list[i][j].length; k++) {
           if (uta_no_list[i][j][k]) {
-            objs[i][j][k]['obj1'].addEventListener(self.event_name, self.executeKarutaClick);
+            objs[i][j][k]['obj1'].addEventListener('click', self.executeKarutaClick);
           }
         }
       }
@@ -90,13 +83,13 @@ var Practice1 = function() {
       for (var j = 0; j < uta_no_list[i].length; j++) {
         for (var k = 0; k < uta_no_list[i][j].length; k++) {
           if (uta_no_list[i][j][k]) {
-            objs[i][j][k]['obj1'].removeEventListener(self.event_name, self.executeKarutaClick);
+            objs[i][j][k]['obj1'].removeEventListener('click', self.executeKarutaClick);
           }
         }
       }
     }
-    self.jbobjs.next.removeEventListener(self.event_name, self.toNextJinchi);
-    self.jbobjs.prev.removeEventListener(self.event_name, self.toPrevJinchi);
+    self.jbobjs.next.removeEventListener('click', self.toNextJinchi);
+    self.jbobjs.prev.removeEventListener('click', self.toPrevJinchi);
   };
 
   this.karutaclick_specs = {};
@@ -257,9 +250,9 @@ var Practice1 = function() {
         //flash_objにイベントリスナーを設置し、次へ進めるようにする。
         var obj = KarutaBoard.getObj(rec.correct.uta_no);
         var flash_obj = KarutaBoard.getFlashObj(rec.correct.board_id);
-        flash_obj.addEventListener(self.event_name, function(e) {
+        flash_obj.addEventListener('click', function(e) {
           KarutaBoard.stopFlash(obj.obj1.karuta_uta_no);
-          flash_obj.removeEventListener(self.event_name, arguments.callee);
+          flash_obj.removeEventListener('click', arguments.callee);
           self.is_animating = 1;
           KarutaBoard.flyKaruta(obj.obj1, self.karutaclick_specs[PS_CONFIRM_ANSWER]);
         });
