@@ -13,7 +13,8 @@ var Controller = function() {
     4:  'practice2',
     5:  'result',
     6:  'stats',
-    7:  'usage',
+    7:  'kimariji',
+    8:  'usage',
   };
 
   this.finished_phase_list = {
@@ -23,6 +24,7 @@ var Controller = function() {
     'practice2': 0,
     'result': 0,
     'stats': 0,
+    'kimariji': 0,
     'usage': 0
   };
 
@@ -80,6 +82,11 @@ var Controller = function() {
         self.phase_obj.init(self);
         break;
 
+      case 'kimariji':
+        self.phase_obj = new Kimariji();
+        self.phase_obj.init(self);
+        break;
+
       case 'usage':
         self.phase_obj = new Usage();
         self.phase_obj.init(self);
@@ -105,16 +112,16 @@ var Controller = function() {
         if (set_next_phase == 'practice1' 
           || set_next_phase == 'practice2'
           || set_next_phase == 'stats'
+          || set_next_phase == 'kimariji'
           || set_next_phase == 'usage'
         ) {
           next_phase = set_next_phase;
         } 
         break;
 
+      case 'kimariji':
       case 'usage':
-        if (set_next_phase == 'splash') {
-          next_phase = set_next_phase;
-        }
+        next_phase = 'splash';
         break;
 
       case 'practice1':

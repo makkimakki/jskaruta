@@ -12,6 +12,7 @@ var Splash = function() {
   this.start = function() {
     if (!self.controller.finished_phase_list['splash']) {
       document.getElementById('p1_btn').addEventListener('click', self.toP1);
+      document.getElementById('kimariji_btn').addEventListener('click', self.toKimariji);
       document.getElementById('usage_btn').addEventListener('click', self.toUsage);
     }
   };
@@ -26,6 +27,10 @@ var Splash = function() {
 
   this.toStats = function() {
     self.toNextPhase('stats');
+  };
+
+  this.toKimariji = function() {
+    self.toNextPhase('kimariji');
   };
 
   this.toUsage = function() {

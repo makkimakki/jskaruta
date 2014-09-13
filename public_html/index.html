@@ -18,6 +18,7 @@
     <script src="js/splash.js"></script>
     <script src="js/practice1.js"></script>
     <script src="js/result.js"></script>
+    <script src="js/kimariji.js"></script>
     <script src="js/usage.js"></script>
     <link rel="stylesheet" media="screen" href="css/reset.css" />
     <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -31,7 +32,7 @@
       </div>
     </div>
 
-    <div id="splash" class="tateDisplay" style="display: none;">
+    <div id="splash" class="yokoDisplay" style="display: none;">
       <section class="splashScr">
         <h2 id="appli_title">百人一首<br />かるた</h2>
 
@@ -39,6 +40,7 @@
           <button type="button" class="splashBtn" id="p1_btn"   >練習する</button>
           <button type="button" class="splashBtn" id="p2_btn" disabled >実戦練習</button>
           <button type="button" class="splashBtn" id="stats_btn" disabled>成績を見る</button>
+          <button type="button" class="splashBtn" id="kimariji_btn">決まり字一覧</button>
           <button type="button" class="splashBtn" id="usage_btn">アプリの使い方</button>
         </div>
       </section>
@@ -306,6 +308,32 @@
       <section id="stats1Scr" class="commonScr">
       </section>
       <section id="stats2Scr" class="commonScr" style="display: none;">
+      </section>
+    </div>
+
+    <div id="kimariji" class="yokoDisplay" style="display: none;">
+      <section id="kListScr" class="commonScr">
+        <div id="kTabArea">
+          <table id="kTabTable">
+            <tr><td id="aTab">あ行</td></tr>
+            <tr><td id="kTab">か行</td></tr>
+            <tr><td id="sTab">さ行</td></tr>
+            <tr><td id="tTab">た行</td></tr>
+            <tr><td id="nTab">な行</td></tr>
+            <tr><td id="hTab">は行</td></tr>
+            <tr><td id="mTab">ま行</td></tr>
+            <tr><td id="yTab">や行</td></tr>
+            <tr><td id="wTab">わ行</td></tr>
+          </table>
+        </div>
+        <div id="kListArea">
+          <table id="kList">
+          </table>
+        </div>
+      </section>
+      <section id="kDetailScr" class="tateScr">
+        <div id="kDetail1"></div>
+        <div id="kDetail2"></div>
       </section>
     </div>
 

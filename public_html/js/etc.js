@@ -123,6 +123,7 @@ function adjustLayout() {
     'game',
     'result',
     'stats',
+    'kimariji',
     'usage'
   ];
 

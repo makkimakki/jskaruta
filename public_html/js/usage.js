@@ -19,15 +19,19 @@ var Usage = function() {
   };
 
   this.start = function() {
-    if (!self.controller.finished_phase_list['usage']) {
-      document.getElementById('uprev_btn').addEventListener('click', self.prevPage);
-      document.getElementById('unext_btn').addEventListener('click', self.nextPage);
-      document.getElementById('utop_btn').addEventListener('click', self.gotoTop);
-    }
+    //if (!self.controller.finished_phase_list['usage']) {
+    document.getElementById('uprev_btn').addEventListener('click', self.prevPage);
+    document.getElementById('unext_btn').addEventListener('click', self.nextPage);
+    document.getElementById('utop_btn').addEventListener('click', self.gotoTop);
+    //}
   };
 
   this.gotoTop = function() {
     if (self.is_animating) return;
+
+    document.getElementById('uprev_btn').removeEventListener('click', self.prevPage);
+    document.getElementById('unext_btn').removeEventListener('click', self.nextPage);
+    document.getElementById('utop_btn').removeEventListener('click', self.gotoTop);
     self.controller.cover.fadeout(fadeout_spec);
   };
 
@@ -75,7 +79,7 @@ var Usage = function() {
       self.u[self.page_no].style['display'] = 'none';
       self.page_no = 1;
       self.u[self.page_no].style['display'] = 'block';
-      self.controller.finishPhase('splash');
+      self.controller.finishPhase();
     }
   };
 };
