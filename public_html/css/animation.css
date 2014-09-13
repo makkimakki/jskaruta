@@ -345,3 +345,82 @@
     background: -webkit-radial-gradient(center center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 0, 1) 80%, rgba(255, 255, 0, 1));
   }
 }
+
+
+
+
+.leftin{
+  animation:
+     leftin 0.2s linear 0s 1 forwards;
+  -webkit-animation:
+     leftin 0.2s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+.leftout{
+  animation:
+     leftout 0.2s linear 0s 1 forwards;
+  -webkit-animation:
+     leftout 0.2s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+.rightin{
+  animation:
+     rightin 0.2s linear 0s 1 forwards;
+  -webkit-animation:
+     rightin 0.2s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+.rightout{
+  animation:
+     rightout 0.2s linear 0s 1 forwards;
+  -webkit-animation:
+     rightout 0.2s linear 0s 1 forwards;
+
+  animation-play-state: running;
+  -webkit-animation-play-state: running;
+}
+
+@keyframes leftin {
+  0%   { transform: translate(-1200px, 0px) }
+  100% { transform: translate(0px, 0px) }
+}
+@-webkit-keyframes leftin {
+  0%   { -webkit-transform: translate(-1200px, 0px) }
+  100% { -webkit-transform: translate(0px, 0px) }
+}
+
+@keyframes leftout {
+  0%   { transform: translate(0px, 0px) }
+  100% { transform: translate(-1200px, 0px) }
+}
+@-webkit-keyframes leftout {
+  0%   { -webkit-transform: translate(0px, 0px) }
+  100% { -webkit-transform: translate(-1200px, 0px) }
+}
+
+@keyframes rightin {
+  0%   { transform: translate(1200px, 0px) }
+  100% { transform: translate(0px, 0px) }
+}
+@-webkit-keyframes rightin {
+  0%   { -webkit-transform: translate(1200px, 0px) }
+  100% { -webkit-transform: translate(0px, 0px) }
+}
+
+@keyframes rightout {
+  0%   { transform: translate(0px, 0px) }
+  100% { transform: translate(1200px, 0px) }
+}
+@-webkit-keyframes rightout {
+  0%   { -webkit-transform: translate(0px, 0px) }
+  100% { -webkit-transform: translate(1200px, 0px) }
+}

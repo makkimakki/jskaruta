@@ -611,6 +611,17 @@
   font-size: 30px;
 }
 
+
+#kListScr, #kDetailScr {
+  width: 1200px;
+  height: 600px;
+  position: absolute;
+}
+
+#kDetailScr {
+  background-color: #eeeeee;
+}
+
 #kTabArea {
   width: 100px;
   height: 600px;
@@ -647,12 +658,28 @@
   position: absolute;
   left: 100px;
   top: 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-#kListTable {
-  width: 1100px;
+#kList {
   height: 600px;
   position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
+  font-size: 40px;
+  line-height: 1.1em;
+  border-right: solid 1px #aaaaaa;
+}
+
+#kList td {
+  width: 99px;
+  padding-top: 40px;
+  border-right: solid 1px #aaaaaa;
+}
+
+.toKListBtn {
+  width: 70px;
+  height: 200px;
+  font-size: 30px;
 }
