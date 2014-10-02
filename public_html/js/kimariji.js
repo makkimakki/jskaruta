@@ -24,7 +24,9 @@ var Kimariji = function() {
 
   this.btn_objs = {
     klist1: document.getElementById('klist_btn1'),
-    klist2: document.getElementById('klist_btn2')
+    klist2: document.getElementById('klist_btn2'),
+    ktop1:  document.getElementById('ktop_btn1'),
+    ktop2:  document.getElementById('ktop_btn2')
   };
 
   this.detail_objs = {
@@ -95,6 +97,8 @@ var Kimariji = function() {
 
     self.btn_objs.klist1.addEventListener('click', self.goToList);
     self.btn_objs.klist2.addEventListener('click', self.goToList);
+    self.btn_objs.ktop1.addEventListener('click',  self.goToTop);
+    self.btn_objs.ktop2.addEventListener('click',  self.goToTop);
 
     self.flip_border_x = Math.round(window.innerWidth * 0.1);
 
@@ -310,6 +314,9 @@ var Kimariji = function() {
   var fadeout_spec = {
     next: function() {
       document.getElementById('kimariji').style['display'] = 'none';
+      self.list_scr_obj.style['display'] = 'block';
+      self.detail_scr_obj.style['display'] = 'none';
+
       for (var key in self.tab_objs) {
         self.tab_objs[key].removeEventListener('click', self.tabSelectExecute);
       }

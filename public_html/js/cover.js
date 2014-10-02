@@ -14,8 +14,8 @@ var Cover = function() {
     //self.obj.style['opacity'] = 1;
     //self.obj.style['z-index'] = 100;
 
-    self.obj.className = 'all_fadein';
-    setTimeout(function(){ self.fadein_finish(spec); }, next_seconds * 1000);
+    setTimeout(function(){ self.obj.className = 'all_fadein'; }, 100);
+    setTimeout(function(){ self.fadein_finish(spec); }, next_seconds * 1000 + 100);
   };
 
   this.fadein_finish = function(spec) {
