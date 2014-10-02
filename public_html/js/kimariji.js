@@ -127,7 +127,7 @@ var Kimariji = function() {
     if (self.first_touch_x) {
       if (self.prev_touch_x - self.first_touch_x >= self.flip_border_x) {
         self.goToNext();
-      } else if (self.first_touch_x - self.prev_touch_x >= self.flip_border_x) {
+      } else if (self.prev_touch_x && self.first_touch_x - self.prev_touch_x >= self.flip_border_x) {
         self.goToPrev();
       }
     }
