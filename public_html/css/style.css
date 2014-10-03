@@ -509,7 +509,7 @@
 
 
 #u1Scr, #u2Scr, #u3Scr, #u4Scr {
-  width: 600px;
+  width: 900px;
   height: 600px;
   position: absolute;
   top: 0;
@@ -524,11 +524,11 @@
 }
 
 #usage .btnArea {
-  width: 600px;
-  height: 100px;
+  width: 200px;
+  height: 600px;
   position: absolute;
-  left: 0;
-  top: 600px;
+  right: 100px;
+  top: 0;
 }
 
 .usageBtn {
@@ -540,18 +540,18 @@
 }
 
 #uprev_btn {
-  width: 50px;
-  left: 50px;
+  width: 100px;
+  top: 100px;
 }
 
 #utop_btn {
   width: 200px;
-  left: 200px;
+  top: 250px;
 }
 
 #unext_btn {
-  width: 50px;
-  right: 50px;
+  width: 100px;
+  top: 400px;
 }
 
 #dialog {
